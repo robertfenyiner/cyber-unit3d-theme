@@ -1,1 +1,259 @@
-cyber
+@import url("./monochrome.css");
+
+/* ==========================================================================
+   CSS Variables for Fusion & Cyberpunk Feel
+   ========================================================================== */
+:root {
+  --primary-accent: #775499; /* Main Purple */
+  --secondary-accent: #6c5186;
+  --cyber-magenta: #ff00ff;
+  --cyber-cyan: #00ffff;
+  --dark-base: #0c090f;
+  --surface-01: #110d15;
+  --surface-02: #1f1721;
+  --text-primary: #d0bfff;
+  --text-secondary: #a68ebd;
+}
+
+/* ==========================================================================
+   Chat Message Bubbles (Right-Aligned Avatars & Dense Layout)
+   ========================================================================== */
+
+/* Message Avatar & Image (aligned to right) */
+.sent > a {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  left: auto;
+}
+.sent > a > img {
+  display: block !important;
+  height: 100%;
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  left: auto;
+}
+
+/* User Avatar (aligned to right) */
+#frame .content .messages ul li.sent img.chat-user-image {
+  height: 20px;
+  width: 20px;
+  border-width: 2px !important;
+  position: absolute;
+  right: 0;
+  left: auto;
+}
+
+/* Message Header with Cyberpunk Gradient */
+.sent > h4 {
+  display: block !important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: linear-gradient(135deg, var(--primary-accent), var(--cyber-magenta));
+  padding: 4px 12px 0 8px;
+  /* Reduced margins for denser layout; avatar on right so swap margins */
+  margin: 4px 48px 0 12px;
+}
+
+/* Message Buttons (pm, gift) */
+.sent h4 i {
+  font-weight: 900;
+}
+
+/* Message Text with Cyberpunk Gradient */
+.sent .text-bright {
+  display: block !important;
+  border-bottom-right-radius: 15px;
+  background: linear-gradient(135deg, var(--primary-accent), var(--cyber-cyan));
+  padding: 0 12px 4px 8px !important;
+  /* Adjust margins to reduce blank space */
+  margin: 0 48px 4px 12px !important;
+}
+
+/* Bot Messages */
+.sent > .system {
+  border-bottom-left-radius: 15px;
+}
+.sent > a[href="/users/System"] + h4 {
+  display: none !important;
+}
+.sent > a[href="/users/System"] + h4 + .system {
+  background-color: transparent !important;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  margin: 2px 0 !important;
+  padding: 0 !important;
+  width: auto;
+  border-radius: 15px;
+  left: calc((100vw - 100px - 50px - 30px - 30px - 2px - 10px - 48px) / 2 - 50%);
+}
+
+/* Responsive adjustment for Bot Messages */
+@media only screen and (max-width: 767px) {
+  .sent > a[href="/users/System"] + h4 + .system {
+    left: calc((100vw - 30px - 30px - 2px - 10px - 48px) / 2 - 50%);
+  }
+}
+
+/* Message Triangle Tip (positioned on right) */
+.sent > div:not(.system):before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  right: 38px;
+  left: auto;
+  width: 0;
+  /* The tip uses a solid cyber-magenta to tie in with the header */
+  border-left: 10px solid var(--cyber-magenta);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* Entire Message Container */
+#frame .content .messages ul li.sent {
+  border: 0;
+  display: table;
+  max-width: 85%;
+  width: auto;
+}
+
+/* Timestamp */
+#frame .content .messages ul li.sent h4 .text-muted {
+  float: none;
+}
+
+
+/* ==========================================================================
+   Fusion Theme - PurpleNord with Cyberpunk Flair
+   Combines PurpleFY base with BLU Nord UI elements and optimized components
+   ========================================================================== */
+
+/* Top Navigation & Icons */
+.top-nav {
+  background: linear-gradient(145deg, #2d2733 0%, #1f1721 100%);
+  border-bottom: 2px solid var(--primary-accent);
+}
+.top-nav__site-logo {
+  background-image: radial-gradient(circle at 65% 35%, #d79cff 25%, #8e41a2 60%, #573d6f 90%);
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 8px rgba(135, 60, 255, 0.4);
+}
+.secondary-nav {
+  background: linear-gradient(to right, #271f2f 0%, #322435 50%, #271f2f 100%);
+  border-color: var(--primary-accent);
+}
+.top-nav__ratio-bar {
+  background: var(--surface-01);
+  border: 1px solid var(--primary-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Compact Freeleech Bar */
+.special-event-alert {
+  padding: 6px 12px;
+  background: var(--primary-accent);
+  border-radius: 4px;
+  margin: 8px auto;
+  width: 90%;
+}
+.special-event-alert > .alert__content {
+  font-size: 0.9em;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Enhanced Chat System */
+.chatbox__chatroom {
+  background: var(--surface-01);
+  border-radius: 8px;
+  max-height: 60vh;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
+}
+/* Reduced padding and margin for a denser message layout */
+.chatbox-message {
+  background: var(--surface-02);
+  border-radius: 12px;
+  margin: 2px;
+  padding: 8px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.chatbox-message:hover {
+  transform: translateX(4px);
+}
+.chatbox-message__avatar {
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+.chatbox-message__avatar:hover {
+  transform: scale(1.2);
+}
+
+/* Unified Component Styling */
+.panelV2 {
+  background: var(--surface-01);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.torrent-card {
+  background: linear-gradient(135deg, var(--surface-02) 0%, #322435 100%);
+  border: 1px solid var(--primary-accent);
+}
+.data-table th {
+  background: var(--surface-02);
+  border-bottom: 2px solid var(--primary-accent);
+}
+
+/* Interactive Elements */
+.form__button--filled {
+  background: var(--primary-accent);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form__button--filled:hover {
+  background: var(--secondary-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(119, 84, 153, 0.4);
+}
+
+/* Typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  background: var(--dark-base);
+}
+h1, h2, h3, h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+}
+.text-info {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .top-nav__site-logo {
+    font-size: 1.8rem;
+  }
+  .special-event-alert {
+    width: 95%;
+    padding: 6px;
+  }
+  .chatbox__chatroom {
+    max-height: 50vh;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes subtlePulse {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+.torrent-card__plot {
+  animation: subtlePulse 6s ease-in-out infinite;
+}
