@@ -5,7 +5,7 @@
 ![Compatibility](https://img.shields.io/badge/Platform-UNIT3D-darkcyan)
 
 <p align="center">
-  <img src="https://ptpimg.me/o11lqc.png" alt="Theme Preview" style="border-radius: 8px; border: 2px solid #775499;">
+  <img src="https://ptpimg.me/yoo0s5.png" alt="Theme Preview" style="border-radius: 8px; border: 2px solid #775499;">
 </p>
 
 A sleek, cyberpunk-inspired CSS theme designed for UNIT3D.
