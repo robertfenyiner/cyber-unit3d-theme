@@ -1,4 +1,4 @@
-# Cyber-Unit3D Theme 
+# cyber-unit3D Theme 
 
 ![License](https://img.shields.io/badge/License-MIT-blue) 
 ![Version](https://img.shields.io/badge/Version-1.0.1-purple) 
