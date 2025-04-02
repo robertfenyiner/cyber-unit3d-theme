@@ -13,7 +13,7 @@ A sleek, cyberpunk-inspired CSS theme designed for UNIT3D.
 ---
 
 <div style="border: 2px solid #775499; background-color: #1f1721; padding: 10px; border-radius: 5px; margin: 15px 0;">
-  <strong>🔮 NOTE:</strong> For optimal appearance, set your profile settings to the <strong>"Dark Teal"</strong> theme. This ensures proper contrast with cyberpunk elements.
+  <strong>🔮 NOTE:</strong> For optimal appearance, set your profile settings to the <strong>"Dark Teal"</strong> theme.
 </div>
 
 ---
