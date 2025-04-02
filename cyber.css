@@ -39,7 +39,6 @@
   
   /* ===============================================================
      Quick Search Input Override
-     This rule overrides the existing styles for .quick-search__input.
   ================================================================= */
   .quick-search__input {
     width: 100% !important;
@@ -67,8 +66,6 @@
   
   /* ===============================================================
      Body & Main Content Container
-     The body stays full width (for full-width top bar backgrounds).
-     Wrap your main page content in a .content-container.
   ================================================================= */
   body {
     font-family: 'Roboto', sans-serif;
@@ -96,6 +93,7 @@
   }
   
   /* Logo styling with purple drop-shadow and subtle background for readability */
+
   .top-nav__site-logo {
     background-image: radial-gradient(circle at 65% 35%, #fff 25%, #fff 60%, #fff 90%);
     background-color: rgba(119,84,153,0.2);
@@ -117,8 +115,6 @@
   
   /* ===============================================================
      Stats Box (Ratio Bar)
-     Increased drop shadow, added rounded edges, extra horizontal padding,
-     and a minimum width so the text has room on the edges.
   ================================================================= */
   .top-nav__ratio-bar {
     background: var(--surface-01);
@@ -210,7 +206,6 @@
   
   /* ===============================================================
      Chat Box (Chatroom)
-     Styled with a subtle style, no cyan drop shadow.
   ================================================================= */
   .chatbox__chatroom {
     background: var(--surface-01);
@@ -231,10 +226,7 @@
   .torrent-card__plot {
     animation: subtlePulse 6s ease-in-out infinite;
   }
-  
-  /* ===============================================================
-     Cyberpunk Icon Style
-  ================================================================= */
+
   .cyber-icon {
     display: inline-block;
     width: 40px;
@@ -252,7 +244,6 @@
     filter: drop-shadow(0 0 3px var(--cyber-cyan));
   }
   
-  /* Additional Cyberpunk Effects */
   @keyframes cyberFlicker {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.6; }
