@@ -7,16 +7,22 @@
 <p align="center">
   <img src="https://ptpimg.me/yoo0s5.png" alt="Theme Preview" style="border-radius: 8px; border: 2px solid #775499;">
 </p>
-
+<p align="center">
 A sleek, cyberpunk-inspired CSS theme designed for UNIT3D.
+</p>
+
+
+
 
 ---
+
 
 <div style="border: 2px solid #775499; background-color: #1f1721; padding: 10px; border-radius: 5px; margin: 15px 0;">
   <strong>🔮 NOTE:</strong> For optimal appearance, set your profile settings to the <strong>"Dark Teal"</strong> theme.
 </div>
 
 ---
+
 
 ### How to Install the Theme
 
