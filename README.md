@@ -99,7 +99,7 @@ Contributions are welcome! Please follow these steps:
 5. Open a Pull Request
 
 **Report issues here**:  
-[https://github.com/RKeaves/rkeaves.github.io/issues](https://github.com/RKeaves/rkeaves.github.io/issues)
+[https://github.com/RKeaves/rkeaves.github.io/issues](https://github.com/RKeaves/cyber-unit3d-theme/issues)
 
 ---
 
