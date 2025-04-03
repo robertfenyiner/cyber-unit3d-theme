@@ -117,13 +117,25 @@
      Stats Box (Ratio Bar)
   ================================================================= */
   .top-nav__ratio-bar {
+    display: inline-flex; /* shrink-wraps to content */
     background: var(--surface-01);
     border: 1px solid var(--primary-accent);
     border-radius: 6px;
     padding: 0.5rem 3rem;
-    min-width: 590px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     filter: drop-shadow(0 0 5px var(--primary-accent));
+  }
+  /* Add extra space to the left */
+  .top-nav__ratio-bar::before {
+    content: "";
+    flex: 0 0 15px; /* fixed 15px width */
+    pointer-events: none;
+  }
+  /* (Optional) If you also want extra space on the right */
+  .top-nav__ratio-bar::after {
+    content: "";
+    flex: 0 0 15px; /* fixed 15px width */
+    pointer-events: none;
   }
   .top-nav__ratio-bar:hover {
     transform: scale(1.005);
