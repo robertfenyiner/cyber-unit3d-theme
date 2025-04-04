@@ -21,7 +21,7 @@
 ================================================================= */
 :root {
   /* Color Scheme */
-  --primary-accent: #775499;      /* Main Purple */
+  --primary-accent: #775499;     
   --secondary-accent: #6c5186;
   --cyber-magenta: #ff00ff;
   --cyber-cyan: #00ffff;
@@ -30,10 +30,10 @@
   --surface-02: #1f1721;
   --text-primary: #d0bfff;
   --text-secondary: #a68ebd;
-  --quick-search-input-offset: 6px; /* Change this value to adjust vertical positioning */
+  --quick-search-input-offset: 6px; 
 
   /* Layout Settings */
-  --content-max-width: 1200px;      /* Adjust main content width here */
+  --content-max-width: 1200px;      
   --content-padding: 20px;
 }
 
@@ -43,8 +43,8 @@
 .quick-search__input {
   width: 100% !important;
   height: 35px !important;
-  line-height: 42px !important; /* Set line-height equal to height for perfect centering */
-  padding: 0 15px !important;    /* Extra horizontal space */
+  line-height: 42px !important; 
+  padding: 0 15px !important;    
   font-size: 15px !important;
   color: #fff !important;
   background: linear-gradient(145deg, #534b57, #3c343f) !important;
@@ -92,6 +92,15 @@ body {
   filter: drop-shadow(20px 18px 18px rgba(0, 0, 0, 0.5));
 }
 
+.top-nav__dropdown ul {
+  background: var( --surface-02);
+
+}
+
+.nav-tab-menu__items {
+  background: var( --surface-02);
+
+}
 
 /* =============================
    Alerts Section
@@ -103,7 +112,9 @@ body {
   background: #312b33 !important;
 }
 
-/* Logo styling with purple drop-shadow and subtle background for readability */
+/* =============================
+   Logo styling
+================================ */
 
 .top-nav__site-logo {
   background-image: radial-gradient(circle at 65% 35%, #fff 25%, #fff 60%, #fff 90%);
@@ -128,7 +139,7 @@ body {
    Stats Box (Ratio Bar)
 ================================================================= */
 .top-nav__ratio-bar {
-  display: inline-flex; /* shrink-wraps to content */
+  display: inline-flex; 
   background: var(--surface-01);
   border: 1px solid var(--primary-accent);
   border-radius: 6px;
@@ -139,13 +150,13 @@ body {
 /* Add extra space to the left */
 .top-nav__ratio-bar::before {
   content: "";
-  flex: 0 0 15px; /* fixed 15px width */
+  flex: 0 0 15px; 
   pointer-events: none;
 }
-/* (Optional) If you also want extra space on the right */
+
 .top-nav__ratio-bar::after {
   content: "";
-  flex: 0 0 15px; /* fixed 15px width */
+  flex: 0 0 15px; 
   pointer-events: none;
 }
 .top-nav__ratio-bar:hover {
@@ -238,6 +249,10 @@ h1:hover, h2:hover, h3:hover, h4:hover {
   border-radius: 8px;
 }
 
+#chatbox__messages-create {
+  margin-bottom: 9px;
+}
+
 /* ===============================================================
    Animations
 ================================================================= */
@@ -278,6 +293,11 @@ h1:hover, h2:hover, h3:hover, h4:hover {
 /* ===============================================================
    Chat Section Overrides & Adjustments
 ================================================================= */
+
+.chatbox-message__content {
+    font-family: Calibri, sans-serif;
+}
+
 .chatbox-message,
 .chatbox-message:before,
 .chatbox-message__header > div,
@@ -380,6 +400,19 @@ i[title="System Notification"] {
   color: rgba(170, 170, 170, 0.5019607843) !important;
 }
 
+/* Extended Soft-Edge Glow Messages */
+
+.chatbox-message__content {
+  color: #ded7e8;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+.chatbox-message__content:hover {
+  color: #fff;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.37), 0 0 6px rgba(255, 255, 255, 0.045);
+}
+
+
+
 /* ===============================================================
    Collapsible Panel 
 ================================================================= */
@@ -393,7 +426,7 @@ details.panel {
 }
 
 .panel__heading {
-  list-style: none; /* Remove default disclosure marker */
+  list-style: none; 
   padding: 0.75rem 1rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.25rem;
@@ -402,16 +435,14 @@ details.panel {
   display: flex;
   align-items: center;
   position: relative;
-  /* Override any cyan drop-shadow here by not applying a filter */
   filter: none !important;
   transition: box-shadow 0.3s ease;
 }
 
 /* Adjust spacing between icon and title text */
 .panel__heading i {
-  margin-right: 0.5rem; /* Increase this value to move the title further right */
+  margin-right: 0.5rem; 
 }
-
 
 /* Hide default marker */
 .panel__heading::-webkit-details-marker {
@@ -455,7 +486,7 @@ img.user-stat-card__avatar::after,
 img.chatbox-message__avatar::after {
   content: "ifn oksut";
   position: absolute;
-  bottom: -1.5em;       /* Position below the image */
+  bottom: -1.5em;       
   left: 50%;
   transform: translateX(-50%);
   background: var(--cyber-cyan);
@@ -464,9 +495,9 @@ img.chatbox-message__avatar::after {
   border-radius: 3px;
   font-size: 0.8rem;
   white-space: nowrap;
-  opacity: 0;           /* Hidden by default */
+  opacity: 0;          
   transition: opacity 0.3s;
-  pointer-events: none; /* Allow hover to pass through */
+  pointer-events: none; 
 }
 
 /* Show tooltip on hover */
@@ -477,4 +508,3 @@ img.chatbox-message__avatar:hover::after {
 }
 
 /*# sourceMappingURL=chat.css.map */
- 
