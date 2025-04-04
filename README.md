@@ -110,4 +110,4 @@ Contributions are welcome! Please follow these steps:
 ---
 
 ## Notes
-- Tested on UNIT3D v9.0.1+
+- Tested on UNIT3D v9.0.1
