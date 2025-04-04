@@ -111,4 +111,4 @@ Contributions are welcome! Please follow these steps:
 
 ## Notes
 - Tested on UNIT3D v9.0.1+
-- [MIT License © 2024 RKeaves](https://opensource.org/licenses/MIT)
+- MIT License 
