@@ -20,416 +20,461 @@
    Change these values to tweak the theme quickly.
 ================================================================= */
 :root {
-    /* Color Scheme */
-    --primary-accent: #775499;      /* Main Purple */
-    --secondary-accent: #6c5186;
-    --cyber-magenta: #ff00ff;
-    --cyber-cyan: #00ffff;
-    --dark-base: #0c090f;
-    --surface-01: #110d15;
-    --surface-02: #1f1721;
-    --text-primary: #d0bfff;
-    --text-secondary: #a68ebd;
-    --quick-search-input-offset: 6px; /* Change this value to adjust vertical positioning */
-  
-    /* Layout Settings */
-    --content-max-width: 1200px;      /* Adjust main content width here */
-    --content-padding: 20px;
-  }
-  
-  /* ===============================================================
-     Quick Search Input Override
-  ================================================================= */
-  .quick-search__input {
-    width: 100% !important;
-    height: 35px !important;
-    line-height: 42px !important; /* Set line-height equal to height for perfect centering */
-    padding: 0 15px !important;    /* Extra horizontal space */
-    font-size: 15px !important;
-    color: #fff !important;
-    background: linear-gradient(145deg, #534b57, #3c343f) !important;
-    border: 2px solid #775499 !important;
-    border-radius: 8px !important;
-    box-shadow: 0 0 8px rgba(119,84,153, 0.8) !important;
-    outline: none;
-    position: relative;
-    top: var(--quick-search-input-offset);
-  }
-  
-  /* ===============================================================
-     Global Transition & Reset
-  ================================================================= */
-  * {
-    transition: filter 0.3s ease, transform 0.3s ease;
-    box-sizing: border-box;
-  }
-  
-  /* ===============================================================
-     Body & Main Content Container
-  ================================================================= */
-  body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-primary);
-    background: var(--dark-base);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .content-container {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 0 var(--content-padding);
-  }
-  
-  /* ===============================================================
-     Navigation & Header Components (Full-Width Top Bar)
-  ================================================================= */
-  .top-nav {
-    background: linear-gradient(145deg, #2d2733 0%, #1f1721 100%);
-    border-bottom: 2px solid var(--primary-accent);
-  }
-  .top-nav:hover {
-    filter: drop-shadow(20px 18px 18px rgba(0, 0, 0, 0.5));
-  }
+  /* Color Scheme */
+  --primary-accent: #775499;      /* Main Purple */
+  --secondary-accent: #6c5186;
+  --cyber-magenta: #ff00ff;
+  --cyber-cyan: #00ffff;
+  --dark-base: #0c090f;
+  --surface-01: #110d15;
+  --surface-02: #1f1721;
+  --text-primary: #d0bfff;
+  --text-secondary: #a68ebd;
+  --quick-search-input-offset: 6px; /* Change this value to adjust vertical positioning */
 
-  
-  /* =============================
-     Alerts Section
-  ================================ */
-  .alerts {
-    background-color: #29232e;
-  }
-  .special-event-alert {
-    background: #312b33 !important;
-  }
-  
-  /* Logo styling with purple drop-shadow and subtle background for readability */
+  /* Layout Settings */
+  --content-max-width: 1200px;      /* Adjust main content width here */
+  --content-padding: 20px;
+}
 
-  .top-nav__site-logo {
-    background-image: radial-gradient(circle at 65% 35%, #fff 25%, #fff 60%, #fff 90%);
-    background-color: rgba(119,84,153,0.2);
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-family: 'JetBrains Mono', monospace;
-    text-shadow: 0 0 10px #f8bce1, 0 0 20px #f1a8f1;
-    transition: text-shadow 0.3s ease, filter 0.3s ease;
-  }
-  .top-nav__site-logo:hover {
-    filter: drop-shadow(0 0 3px var(--primary-accent));
-    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-  }
-  
-  .secondary-nav {
-    background: linear-gradient(to right, #271f2f 0%, #322435 50%, #271f2f 100%);
-    border-color: var(--primary-accent);
-  }
-  
-  /* ===============================================================
-     Stats Box (Ratio Bar)
-  ================================================================= */
-  .top-nav__ratio-bar {
-    display: inline-flex; /* shrink-wraps to content */
-    background: var(--surface-01);
-    border: 1px solid var(--primary-accent);
-    border-radius: 6px;
-    padding: 0.5rem 3rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    filter: drop-shadow(0 0 5px var(--primary-accent));
-  }
-  /* Add extra space to the left */
-  .top-nav__ratio-bar::before {
-    content: "";
-    flex: 0 0 15px; /* fixed 15px width */
-    pointer-events: none;
-  }
-  /* (Optional) If you also want extra space on the right */
-  .top-nav__ratio-bar::after {
-    content: "";
-    flex: 0 0 15px; /* fixed 15px width */
-    pointer-events: none;
-  }
-  .top-nav__ratio-bar:hover {
-    transform: scale(1.005);
-  }
-  
-  /* ===============================================================
-     Alert & Panel Components
-  ================================================================= */
-  .special-event-alert {
-    padding: 6px 12px;
-    background: #323133;
-    border-radius: 4px;
-    margin: 8px auto;
-    width: 90%;
-  }
-  .special-event-alert:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  .special-event-alert > .alert__content {
-    font-size: 0.9em;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .panelV2 {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-  .panelV2:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  
-  /* ===============================================================
-     Content Components
-  ================================================================= */
-  .torrent-card {
-    background: linear-gradient(135deg, var(--surface-02) 0%, #322435 100%);
-    border: 1px solid var(--primary-accent);
-  }
-  .torrent-card:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  
-  .data-table th {
-    background: var(--surface-02);
-    border-bottom: 2px solid var(--primary-accent);
-  }
-  .data-table th:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  
-  /* ===============================================================
-     Buttons & Interactive Elements
-  ================================================================= */
-  .form__button--filled {
-    background: var(--primary-accent);
-  }
-  .form__button--filled:hover {
-    background: var(--secondary-accent);
-    box-shadow: 0 2px 4px rgba(119,84,153,0.4);
-  }
-  
-  /* ===============================================================
-     Typography
-  ================================================================= */
-  h1, h2, h3, h4 {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-primary);
-  }
-  h1:hover, h2:hover, h3:hover, h4:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  .text-info {
-    color: var(--text-secondary);
-  }
-  .text-info:hover {
-    color: var(--cyber-magenta);
-  }
-  
-  /* ===============================================================
-     Chat Box (Chatroom)
-  ================================================================= */
-  .chatbox__chatroom {
-    background: var(--surface-01);
-    border: 1px solid var(--primary-accent);
-    /* Removed drop-shadow filter for chatbox */
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  /* ===============================================================
-     Animations
-  ================================================================= */
-  @keyframes subtlePulse {
-    0% { opacity: 0.95; }
-    50% { opacity: 1; }
-    100% { opacity: 0.95; }
-  }
-  .torrent-card__plot {
-    animation: subtlePulse 6s ease-in-out infinite;
-  }
+/* ===============================================================
+   Quick Search Input Override
+================================================================= */
+.quick-search__input {
+  width: 100% !important;
+  height: 35px !important;
+  line-height: 42px !important; /* Set line-height equal to height for perfect centering */
+  padding: 0 15px !important;    /* Extra horizontal space */
+  font-size: 15px !important;
+  color: #fff !important;
+  background: linear-gradient(145deg, #534b57, #3c343f) !important;
+  border: 2px solid #775499 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 8px rgba(119,84,153, 0.8) !important;
+  outline: none;
+  position: relative;
+  top: var(--quick-search-input-offset);
+}
 
-  .cyber-icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: var(--surface-02);
-    border: 2px solid var(--primary-accent);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 1.2rem;
-    color: var(--text-primary);
-    box-shadow: 0 0 8px var(--cyber-cyan);
-  }
-  .cyber-icon:hover {
-    filter: drop-shadow(0 0 3px var(--cyber-cyan));
-  }
-  
-  @keyframes cyberFlicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-  .cyber-icon.glow {
-    animation: cyberFlicker 1.5s infinite;
-  }
-  
-  /* ===============================================================
-     Chat Section Overrides & Adjustments
-  ================================================================= */
+/* ===============================================================
+   Global Transition & Reset
+================================================================= */
+* {
+  transition: filter 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* ===============================================================
+   Body & Main Content Container
+================================================================= */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  background: var(--dark-base);
+  margin: 0;
+  padding: 0;
+}
+
+.content-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+/* ===============================================================
+   Navigation & Header Components (Full-Width Top Bar)
+================================================================= */
+.top-nav {
+  background: linear-gradient(145deg, #2d2733 0%, #1f1721 100%);
+  border-bottom: 2px solid var(--primary-accent);
+}
+.top-nav:hover {
+  filter: drop-shadow(20px 18px 18px rgba(0, 0, 0, 0.5));
+}
+
+
+/* =============================
+   Alerts Section
+================================ */
+.alerts {
+  background-color: #29232e;
+}
+.special-event-alert {
+  background: #312b33 !important;
+}
+
+/* Logo styling with purple drop-shadow and subtle background for readability */
+
+.top-nav__site-logo {
+  background-image: radial-gradient(circle at 65% 35%, #fff 25%, #fff 60%, #fff 90%);
+  background-color: rgba(119,84,153,0.2);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 10px #f8bce1, 0 0 20px #f1a8f1;
+  transition: text-shadow 0.3s ease, filter 0.3s ease;
+}
+.top-nav__site-logo:hover {
+  filter: drop-shadow(0 0 3px var(--primary-accent));
+  text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+.secondary-nav {
+  background: linear-gradient(to right, #271f2f 0%, #322435 50%, #271f2f 100%);
+  border-color: var(--primary-accent);
+}
+
+/* ===============================================================
+   Stats Box (Ratio Bar)
+================================================================= */
+.top-nav__ratio-bar {
+  display: inline-flex; /* shrink-wraps to content */
+  background: var(--surface-01);
+  border: 1px solid var(--primary-accent);
+  border-radius: 6px;
+  padding: 0.5rem 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 0 5px var(--primary-accent));
+}
+/* Add extra space to the left */
+.top-nav__ratio-bar::before {
+  content: "";
+  flex: 0 0 15px; /* fixed 15px width */
+  pointer-events: none;
+}
+/* (Optional) If you also want extra space on the right */
+.top-nav__ratio-bar::after {
+  content: "";
+  flex: 0 0 15px; /* fixed 15px width */
+  pointer-events: none;
+}
+.top-nav__ratio-bar:hover {
+  transform: scale(1.005);
+}
+
+/* ===============================================================
+   Alert & Panel Components
+================================================================= */
+.special-event-alert {
+  padding: 6px 12px;
+  background: #323133;
+  border-radius: 4px;
+  margin: 8px auto;
+  width: 90%;
+}
+.special-event-alert:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+.special-event-alert > .alert__content {
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.panelV2 {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.panelV2:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+
+/* ===============================================================
+   Content Components
+================================================================= */
+.torrent-card {
+  background: linear-gradient(135deg, var(--surface-02) 0%, #322435 100%);
+  border: 1px solid var(--primary-accent);
+}
+.torrent-card:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+
+.data-table th {
+  background: var(--surface-02);
+  border-bottom: 2px solid var(--primary-accent);
+}
+.data-table th:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+
+/* ===============================================================
+   Buttons & Interactive Elements
+================================================================= */
+.form__button--filled {
+  background: var(--primary-accent);
+}
+.form__button--filled:hover {
+  background: var(--secondary-accent);
+  box-shadow: 0 2px 4px rgba(119,84,153,0.4);
+}
+
+/* ===============================================================
+   Typography
+================================================================= */
+h1, h2, h3, h4 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+}
+h1:hover, h2:hover, h3:hover, h4:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+.text-info {
+  color: var(--text-secondary);
+}
+.text-info:hover {
+  color: var(--cyber-magenta);
+}
+
+/* ===============================================================
+   Chat Box (Chatroom)
+================================================================= */
+.chatbox__chatroom {
+  background: var(--surface-01);
+  border: 1px solid var(--primary-accent);
+  /* Removed drop-shadow filter for chatbox */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* ===============================================================
+   Animations
+================================================================= */
+@keyframes subtlePulse {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.95; }
+}
+.torrent-card__plot {
+  animation: subtlePulse 6s ease-in-out infinite;
+}
+
+.cyber-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: var(--surface-02);
+  border: 2px solid var(--primary-accent);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  box-shadow: 0 0 8px var(--cyber-cyan);
+}
+.cyber-icon:hover {
+  filter: drop-shadow(0 0 3px var(--cyber-cyan));
+}
+
+@keyframes cyberFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.cyber-icon.glow {
+  animation: cyberFlicker 1.5s infinite;
+}
+
+/* ===============================================================
+   Chat Section Overrides & Adjustments
+================================================================= */
+.chatbox-message,
+.chatbox-message:before,
+.chatbox-message__header > div,
+.chatbox-message__content > div,
+div[style*="white-space: nowrap;"] {
+  white-space: normal !important;
+  max-width: 60vw !important;
+}
+@media (max-width: 992px) {
   .chatbox-message,
   .chatbox-message:before,
   .chatbox-message__header > div,
   .chatbox-message__content > div,
   div[style*="white-space: nowrap;"] {
-    white-space: normal !important;
-    max-width: 60vw !important;
+    max-width: 70vw !important;
   }
-  @media (max-width: 992px) {
-    .chatbox-message,
-    .chatbox-message:before,
-    .chatbox-message__header > div,
-    .chatbox-message__content > div,
-    div[style*="white-space: nowrap;"] {
-      max-width: 70vw !important;
-    }
-  }
-  @media (max-width: 768px) {
-    .chatbox-message,
-    .chatbox-message:before,
-    .chatbox-message__header > div,
-    .chatbox-message__content > div,
-    div[style*="white-space: nowrap;"] {
-      max-width: 75vw !important;
-    }
-  }
-  @media (max-width: 576px) {
-    .chatbox-message,
-    .chatbox-message:before,
-    .chatbox-message__header > div,
-    .chatbox-message__content > div,
-    div[style*="white-space: nowrap;"] {
-      max-width: 85vw !important;
-    }
-  }
-  
-  .chatbox__chatroom {
-    max-height: 60vh;
-  }
-  @media (max-height: 500px) {
-    .chatbox__chatroom {
-      max-height: 50vh;
-    }
-  }
-  
-  .chatbox-message:has(aside > figure > i) {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  
-  .chatbox-message__address.user-tag:has(a[title=Bot]) {
-    padding: 0 !important;
-  }
-  
-  .chatbox--fullscreen .chatbox__chatroom {
-    max-height: calc(100vh - 36px - 37px);
-  }
-  
-  .chatbox-message__header > div,
-  .chatbox-message__content > div {
-    color: #aaaaaa !important;
-  }
-  
-  .chatbox-message__header > div {
-    font-size: 12px !important;
-  }
-  
-  .chatbox__chatroom {
-    line-height: 0.9 !important;
-    background-color: #1c1c1c;
-  }
-  
-  .panel__tabs {
-    background-color: #1c1c1c;
-  }
-  
+}
+@media (max-width: 768px) {
   .chatbox-message,
-  .chatbox-message:before {
-    background-color: transparent;
-    border: none;
-    font-size: 14px !important;
+  .chatbox-message:before,
+  .chatbox-message__header > div,
+  .chatbox-message__content > div,
+  div[style*="white-space: nowrap;"] {
+    max-width: 75vw !important;
   }
-  
-  a[href="/users/System"] {
-    display: none;
+}
+@media (max-width: 576px) {
+  .chatbox-message,
+  .chatbox-message:before,
+  .chatbox-message__header > div,
+  .chatbox-message__content > div,
+  div[style*="white-space: nowrap;"] {
+    max-width: 85vw !important;
   }
-  
-  i[title="System Notification"] {
-    display: none;
+}
+
+.chatbox__chatroom {
+  max-height: 60vh;
+}
+@media (max-height: 500px) {
+  .chatbox__chatroom {
+    max-height: 50vh;
   }
-  
-  .chatbox-message__aside {
-    bottom: auto;
-    top: 4px;
-  }
-  
-  .chatbox-message__time {
-    padding: 0;
-    font-size: 10px !important;
-    color: rgba(170, 170, 170, 0.5019607843) !important;
-  }
-  
-  /* ===============================================================
-     Collapsible Panel 
-  ================================================================= */
-  details.panel {
-    border: 1px solid var(--primary-accent);
-    border-radius: 8px;
-    margin: 1rem 0;
-    overflow: hidden;
-    background: var(--surface-01);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .panel__heading {
-    list-style: none; /* Remove default disclosure marker */
-    padding: 0.75rem 1rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative;
-    /* Override any cyan drop-shadow here by not applying a filter */
-    filter: none !important;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  /* Adjust spacing between icon and title text */
-  .panel__heading i {
-    margin-right: 0.5rem; /* Increase this value to move the title further right */
-  }
-  
-  
-  /* Hide default marker */
-  .panel__heading::-webkit-details-marker {
-    display: none;
-  }
-  
-  
-  details.panel[open] .panel__heading::after {
-    content: "-";
-  }
-  
-  .panel__content {
-    padding: 1rem;
-    background: var(--surface-02);
-    color: var(--text-primary);
-    transition: max-height 0.3s ease;
-  }
-  
-  
-  /*# sourceMappingURL=chat.css.map */
-   
+}
+
+.chatbox-message:has(aside > figure > i) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.chatbox-message__address.user-tag:has(a[title=Bot]) {
+  padding: 0 !important;
+}
+
+.chatbox--fullscreen .chatbox__chatroom {
+  max-height: calc(100vh - 36px - 37px);
+}
+
+.chatbox-message__header > div,
+.chatbox-message__content > div {
+  color: #aaaaaa !important;
+}
+
+.chatbox-message__header > div {
+  font-size: 12px !important;
+}
+
+.chatbox__chatroom {
+  line-height: 0.9 !important;
+  background-color: #1c1c1c;
+}
+
+.panel__tabs {
+  background-color: #1c1c1c;
+}
+
+.chatbox-message,
+.chatbox-message:before {
+  background-color: transparent;
+  border: none;
+  font-size: 14px !important;
+}
+
+a[href="/users/System"] {
+  display: none;
+}
+
+i[title="System Notification"] {
+  display: none;
+}
+
+.chatbox-message__aside {
+  bottom: auto;
+  top: 4px;
+}
+
+.chatbox-message__time {
+  padding: 0;
+  font-size: 10px !important;
+  color: rgba(170, 170, 170, 0.5019607843) !important;
+}
+
+/* ===============================================================
+   Collapsible Panel 
+================================================================= */
+details.panel {
+  border: 1px solid var(--primary-accent);
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: hidden;
+  background: var(--surface-01);
+  transition: box-shadow 0.3s ease;
+}
+
+.panel__heading {
+  list-style: none; /* Remove default disclosure marker */
+  padding: 0.75rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* Override any cyan drop-shadow here by not applying a filter */
+  filter: none !important;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Adjust spacing between icon and title text */
+.panel__heading i {
+  margin-right: 0.5rem; /* Increase this value to move the title further right */
+}
+
+
+/* Hide default marker */
+.panel__heading::-webkit-details-marker {
+  display: none;
+}
+
+
+details.panel[open] .panel__heading::after {
+  content: "-";
+}
+
+.panel__content {
+  padding: 1rem;
+  background: var(--surface-02);
+  color: var(--text-primary);
+  transition: max-height 0.3s ease;
+}
+
+
+/* ================================
+   Avatar Cyan Glow & Tooltip Title
+================================ */
+/* Default state without glow */
+img.user-search__avatar,
+img.user-stat-card__avatar,
+img.chatbox-message__avatar {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Cyan glow on hover */
+img.user-search__avatar:hover,
+img.user-stat-card__avatar:hover,
+img.chatbox-message__avatar:hover {
+  box-shadow: 0 0 8px var(--cyber-cyan);
+}
+
+/* Tooltip title with the text "ifn oksut" */
+img.user-search__avatar::after,
+img.user-stat-card__avatar::after,
+img.chatbox-message__avatar::after {
+  content: "ifn oksut";
+  position: absolute;
+  bottom: -1.5em;       /* Position below the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cyber-cyan);
+  color: var(--dark-base);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;           /* Hidden by default */
+  transition: opacity 0.3s;
+  pointer-events: none; /* Allow hover to pass through */
+}
+
+/* Show tooltip on hover */
+img.user-search__avatar:hover::after,
+img.user-stat-card__avatar:hover::after,
+img.chatbox-message__avatar:hover::after {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=chat.css.map */
+ 
