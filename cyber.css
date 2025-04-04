@@ -91,6 +91,17 @@
   .top-nav:hover {
     filter: drop-shadow(20px 18px 18px rgba(0, 0, 0, 0.5));
   }
+
+  
+  /* =============================
+     Alerts Section
+  ================================ */
+  .alerts {
+    background-color: #29232e;
+  }
+  .special-event-alert {
+    background: #312b33 !important;
+  }
   
   /* Logo styling with purple drop-shadow and subtle background for readability */
 
