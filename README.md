@@ -30,7 +30,7 @@ A sleek, cyberpunk-inspired CSS theme designed for UNIT3D.
    *User Icon (top-right corner) → **My Settings** → External CSS Stylesheet (Stacks on top of above theme)*
 
 2. **Paste Theme URL**:  
-   `http://rkeaves.online/css-theme/cyber.css`
+   `http://rkeaves.github.io/css-theme/cyber-lime.css`
 
 3. **Set Base Theme**:  
    *Ensure your profile uses the **"Dark Teal"** theme for proper contrast ( General Settings → Style → Theme)*
@@ -40,7 +40,7 @@ A sleek, cyberpunk-inspired CSS theme designed for UNIT3D.
    _Refresh page to apply_
 
 <p align="center">
-  <img src="https://ptpimg.me/401410.png" alt="Theme Preview" style="border-radius: 8px; border: 2px solid #775499;">
+  <img src="https://ptpimg.me/346gub.png" alt="Theme Preview" style="border-radius: 8px; border: 2px solid #775499;">
 </p>
 
 
