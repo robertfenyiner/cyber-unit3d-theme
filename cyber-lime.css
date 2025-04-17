@@ -2,7 +2,7 @@
  !/* Theme Name: Cyber-Unit3D Lime                                                   !/*
  !/* Theme URL: https://rkeaves.github.io/css-theme/cyber-lime.css                   !/*
  !/* Description: Cyber United, lime green version.                                  !/*
- !/* Version: 1.0                                                                    !/*
+ !/* Version: 1.0.1                                                                  !/*
  !/* Author: RKeaves                                                                 !/*
  !/* Author URL: https://github.com/rkeaves                                          !/*
  !/* License: MIT https://opensource.org/licenses/MIT                                !/*
@@ -12,7 +12,7 @@
  !/*==================================================================================/*
 
 /* ================================================================================== */
-/* ->  Note: For optimal appearance, please change your profile theme to "Dark Teal"  */   
+/* -> Note: For optimal appearance, please change your profile theme to "Dark Green"  */   
 /* ================================================================================== */
 
 :root {
@@ -353,7 +353,6 @@ body {
   border-color: var(--primary-accent);
 }
 
-/* Stats Box (Ratio Bar) */
 .top-nav__ratio-bar {
   display: inline-flex; 
   background: var(--surface-01);
@@ -503,8 +502,12 @@ h1:hover, h2:hover, h3:hover, h4:hover {
 }
 
 .chatbox-message__content {
-  font-family: Calibri, sans-serif;
+  font-family: Terminal, monospace;
+  color: #00FF00;
+  text-shadow: 0 0 1px #00FF00;
+  
 }
+
 .chatbox-message,
 .chatbox-message:before,
 .chatbox-message__header > div,
@@ -585,7 +588,7 @@ div[style*="white-space: nowrap;"] {
 .chatbox-message:before {
   background-color: transparent;
   border: none;
-  font-size: 14px !important;
+  font-size: 12px !important;
 }
 
 a[href="/users/System"] {
@@ -608,7 +611,7 @@ i[title="System Notification"] {
 }
 
 .chatbox-message__content {
-  color: #ded7e8;
+  color: #99ff6a;
   transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 .chatbox-message__content:hover {
@@ -630,13 +633,27 @@ details.panel {
   padding: 0.75rem 1rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.25rem;
-  color: var(--text-primary);
+  color: #00FF88;
   cursor: pointer;
   display: flex;
   align-items: center;
   position: relative;
   transition: box-shadow 0.3s ease;
 }
+
+.form__button--text {
+  color: #04D974;
+  transition: text-shadow 0.3s ease;
+}
+
+.form__button--text:hover {
+  text-shadow:
+  0 0 1px #00BFFF,
+  0 0 4px #00BFFF,
+  0 0 5px #00BFFF;
+  
+}
+
 .panel__heading i {
   margin-right: 0.5rem;
 }
@@ -688,8 +705,10 @@ img.chatbox-message__avatar:hover::after {
   opacity: 1;
 }
 
+/*
+
 section:not(.blocks__alerts-tab) .data-table-wrapper .torrent-search--list__row {
-  grid-template-columns: 1fr auto auto; /* First column takes up remaining space */
+  grid-template-columns: 1fr auto auto;
   align-content: center;
 }
 
@@ -698,6 +717,20 @@ section:not(.blocks__alerts-tab) .data-table-wrapper .torrent-search--list__reso
   font-size: 1.1em;
   align-content: center;
   align-items: center;
+}
+*/
+
+section:not(.blocks__alerts-tab)
+  .torrent-search--list__resolution-and-type {
+  position: relative; /* remove from normal flow */
+  left: 10px;         /* adjust as needed */
+  font-size: 1.1em;
+  /* remove display: contents if you need a real box to position */
+}
+
+
+.data-table-wrapper {
+  position: relative; /* establishes a containing block for absolute children */
 }
 
 
@@ -713,7 +746,7 @@ section:not(.blocks__alerts-tab) .data-table-wrapper .torrent-search--list__row 
 section:not(.blocks__alerts-tab) .data-table-wrapper .torrent-search--list__row > .torrent-search--list__format {
   justify-self: start;
   text-align: left;
-  padding-right: 1350px;
+  padding-right: 1450px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -743,9 +776,7 @@ section:not(.blocks__alerts-tab) .torrent-search--list__name {
   border: none !important;
 }
 
-section:not(.blocks__alerts-tab) .torrent-search--list__overview > div {
-  display: block ruby;
-}
+
 
 /* Add spacing  */
 .blocks__alerts-tab .user-tag__link {
@@ -794,10 +825,35 @@ section:not(.blocks__alerts-tab) .data-table-wrapper .user-tag__link {
 
 section:not(.blocks__alerts-tab) .torrent-search--list__name {
   display: inline-block;
-  max-width: 850px;
+  max-width: 500px;
   white-space: nowrap;
   overflow: clip;
   text-overflow: ellipsis;
   text-align: left;
 }
-/*# sourceMappingURL=chat.css.map */
+
+section:not(.blocks__alerts-tab) .torrent-search--list__name {
+  position: relative;      /* parent for absolute expanded state */
+  display: inline-block;   /* allow width */
+  max-width: 500px;         /* original width limit */
+  white-space: nowrap;     /* single-line truncation */
+  overflow: hidden;        /* hide overflow */
+  text-overflow: ellipsis; /* show ellipsis */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+section:not(.blocks__alerts-tab) .torrent-search--list__name:hover {
+  position: unset;      /* remove from flow */
+  bottom: 100%;            /* position just above the original element */
+  left: 0;
+  white-space: normal;     /* allow wrapping */
+  overflow: visible;       /* reveal hidden text */
+  max-width: 100vw;        /* limit to viewport width */
+  background: var(--surface-02);
+  color: var(--text-primary);
+  padding: 0.5em 0.75em;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
