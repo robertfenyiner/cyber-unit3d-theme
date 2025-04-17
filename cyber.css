@@ -1,6 +1,6 @@
  /*==================================================================================!/*
  !/* Theme Name: Cyber-Unit3D                                                        !/*
- !/* Theme URL: http://rkeaves.online/css-theme/cyber.css                            !/*
+ !/* Theme URL: https://rkeaves.github.io/css-theme/cyber.css                        !/*
  !/* Description: A sleek, cyberpunk-inspired CSS theme.                             !/*
  !/* Version: 1.0.1                                                                  !/*
  !/* Author: RKeaves                                                                 !/*
@@ -146,18 +146,53 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   filter: drop-shadow(0 0 5px var(--primary-accent));
 }
-/* Add extra space to the left */
-.top-nav__ratio-bar::before {
-  content: "";
-  flex: 0 0 15px; 
-  pointer-events: none;
+
+@media (max-width: 768px) {
+  .top-nav__ratio-bar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 0.5rem; 
+    background: var(--surface-01);
+    border: 1px solid var(--primary-accent);
+    border-radius: 6px;
+    padding: 0.5rem 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 0 5px var(--primary-accent));
+    align-items: center;
+    overflow: hidden;
+    white-space: normal; 
+    font-size: 0.9rem;   
+    position: relative;  
+  }
+
+  .top-nav__ratio-bar::before,
+  .top-nav__ratio-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    pointer-events: none;
+  }
+  .top-nav__ratio-bar::before {
+    left: 0;
+  }
+  .top-nav__ratio-bar::after {
+    right: 0;
+  }
 }
 
+.top-nav__ratio-bar::before,
 .top-nav__ratio-bar::after {
-  content: "";
-  flex: 0 0 15px; 
-  pointer-events: none;
+  content: none !important;
+  display: none !important;
 }
+
+.top-nav__ratio-bar {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
 .top-nav__ratio-bar:hover {
   transform: scale(1.005);
 }
@@ -410,8 +445,6 @@ i[title="System Notification"] {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.37), 0 0 6px rgba(255, 255, 255, 0.045);
 }
 
-
-
 /* ===============================================================
    Collapsible Panel 
 ================================================================= */
@@ -448,7 +481,6 @@ details.panel {
   display: none;
 }
 
-
 details.panel[open] .panel__heading::after {
   content: "-";
 }
@@ -459,7 +491,6 @@ details.panel[open] .panel__heading::after {
   color: var(--text-primary);
   transition: max-height 0.3s ease;
 }
-
 
 /* ================================
    Avatar Cyan Glow & Tooltip Title
