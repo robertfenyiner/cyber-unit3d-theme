@@ -94,16 +94,6 @@ Modify these core variables to change the theme's color profile:
 ### 3. Component Positioning
 - `--quick-search-input-offset`: Vertical adjustment for search bar
 
----
-
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit changes (`git commit -m 'Add awesome feature'`)
-4. Push to branch (`git push origin feature/improvement`)
-5. Open a Pull Request
-
 **Report issues here**:  
 [https://github.com/RKeaves/cyber-unit3d-theme/issues](https://github.com/RKeaves/cyber-unit3d-theme/issues)
 
