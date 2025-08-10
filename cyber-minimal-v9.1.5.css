@@ -1,11 +1,11 @@
 /*==================================================================================*/
 /* Theme Name: Cyber-Unit3D v9.1.5 Minimal                                        */
 /* Description: A minimal, elegant cyberpunk theme for UNIT3D v9.1.5              */
-/* Version: 2.1.1 - Minimal Edition (Updated: 2025-08-10 16:45)                   */
+/* Version: 2.1.2 - Minimal Edition (Updated: 2025-08-10 16:55)                   */
 /* Author: RKeaves & Assistant                                                     */
 /* License: MIT https://opensource.org/licenses/MIT                                */
 /* Compatibility: UNIT3D v9.1.5+                                                  */
-/* FORCED UPDATE: Dropdown menus fixed with aggressive selectors                   */
+/* FIX: Consistent dropdown menu styling for all elements including News           */
 /*==================================================================================*/
 
 /* Note: Set your profile theme to "Dark Teal" for optimal results */
@@ -181,9 +181,13 @@ li.dropdown .dropdown-menu,
 .submenu a,
 .dropdown-menu .dropdown-item,
 li.dropdown .dropdown-menu a,
-.navbar .dropdown-menu a {
+.navbar .dropdown-menu a,
+.dropdown-menu > li > a,
+.dropdown-menu li,
+.dropdown-divider + a,
+.dropdown-menu .nav-link {
   color: var(--text-primary) !important;
-  padding: 6px 10px !important;
+  padding: 8px 12px !important;
   border-radius: 4px !important;
   transition: all var(--transition-speed) ease !important;
   font-size: 0.85em !important;
@@ -191,10 +195,11 @@ li.dropdown .dropdown-menu a,
   text-decoration: none !important;
   border: 1px solid transparent !important;
   margin: 1px 0 !important;
-  background: transparent !important;
-  width: auto !important;
+  background: var(--surface-02) !important;
+  width: calc(100% - 2px) !important;
   max-width: none !important;
   white-space: nowrap !important;
+  box-sizing: border-box !important;
 }
 
 .dropdown-item:hover,
@@ -204,11 +209,40 @@ li.dropdown .dropdown-menu a,
 .submenu a:hover,
 .dropdown-menu .dropdown-item:hover,
 li.dropdown .dropdown-menu a:hover,
-.navbar .dropdown-menu a:hover {
+.navbar .dropdown-menu a:hover,
+.dropdown-menu > li > a:hover,
+.dropdown-menu li:hover,
+.dropdown-divider + a:hover,
+.dropdown-menu .nav-link:hover {
   background: var(--primary-accent) !important;
   color: #fff !important;
   border-color: var(--cyber-cyan) !important;
   transform: translateX(2px) !important;
+}
+
+/* Force consistent styling for all dropdown elements */
+.dropdown-menu > *,
+.dropdown-menu li,
+.dropdown-menu div {
+  background: var(--surface-02) !important;
+  border: none !important;
+}
+
+/* Ensure no element inherits different colors */
+.dropdown-menu .text-info,
+.dropdown-menu .text-primary,
+.dropdown-menu .text-success,
+.dropdown-menu .text-warning,
+.dropdown-menu .text-danger {
+  color: var(--text-primary) !important;
+}
+
+.dropdown-menu .text-info:hover,
+.dropdown-menu .text-primary:hover,
+.dropdown-menu .text-success:hover,
+.dropdown-menu .text-warning:hover,
+.dropdown-menu .text-danger:hover {
+  color: #fff !important;
 }
 
 /* Show dropdown on hover */
@@ -225,6 +259,44 @@ li.dropdown:hover .dropdown-menu,
 .dropdown-menu.show {
   max-width: 180px !important;
   width: auto !important;
+}
+
+/* Force all dropdown elements to have consistent icons and text */
+.dropdown-menu i,
+.dropdown-menu .fa,
+.dropdown-menu .icon,
+.dropdown-menu [class*="fa-"],
+.dropdown-menu [class*="icon-"] {
+  color: inherit !important;
+  margin-right: 8px !important;
+  opacity: 0.9 !important;
+  width: 14px !important;
+  text-align: center !important;
+}
+
+.dropdown-menu a i,
+.dropdown-menu a .fa,
+.dropdown-menu a .icon,
+.dropdown-menu a [class*="fa-"],
+.dropdown-menu a [class*="icon-"] {
+  color: var(--cyber-cyan) !important;
+}
+
+.dropdown-menu a:hover i,
+.dropdown-menu a:hover .fa,
+.dropdown-menu a:hover .icon,
+.dropdown-menu a:hover [class*="fa-"],
+.dropdown-menu a:hover [class*="icon-"] {
+  color: #fff !important;
+}
+
+/* Ensure dividers are minimal */
+.dropdown-divider,
+.dropdown-menu .divider {
+  height: 1px !important;
+  margin: 4px 0 !important;
+  background: rgba(119, 84, 153, 0.3) !important;
+  border: none !important;
 }
 
 /* ===============================================================
