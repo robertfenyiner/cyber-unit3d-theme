@@ -1,11 +1,11 @@
 /*==================================================================================*/
 /* Theme Name: Cyber-Unit3D v9.1.5 Minimal                                        */
 /* Description: A minimal, elegant cyberpunk theme for UNIT3D v9.1.5              */
-/* Version: 2.1.2 - Minimal Edition (Updated: 2025-08-10 16:55)                   */
+/* Version: 2.1.4 - FIXED DROPDOWN (Updated: 2025-08-10 17:15)                    */
 /* Author: RKeaves & Assistant                                                     */
 /* License: MIT https://opensource.org/licenses/MIT                                */
 /* Compatibility: UNIT3D v9.1.5+                                                  */
-/* FIX: Consistent dropdown menu styling for all elements including News           */
+/* LATEST FIX: Hardcoded dropdown values for consistent News menu styling         */
 /*==================================================================================*/
 
 /* Note: Set your profile theme to "Dark Teal" for optimal results */
@@ -154,16 +154,16 @@ div.dropdown-menu,
 .navbar-nav .dropdown-menu,
 li.dropdown .dropdown-menu,
 .dropdown-toggle + .dropdown-menu {
-  background: var(--surface-02) !important;
-  border: 1px solid var(--primary-accent) !important;
-  border-radius: var(--border-radius) !important;
+  background: #1a1621 !important;
+  border: 1px solid #775499 !important;
+  border-radius: 6px !important;
   box-shadow: 
-    var(--subtle-shadow),
+    0 2px 8px rgba(0, 0, 0, 0.3),
     0 4px 16px rgba(0, 0, 0, 0.4) !important;
   padding: 4px !important;
   margin-top: 2px !important;
   min-width: 140px !important;
-  max-width: 180px !important;
+  max-width: 160px !important;
   width: auto !important;
   z-index: 9999 !important;
   position: absolute !important;
@@ -186,16 +186,16 @@ li.dropdown .dropdown-menu a,
 .dropdown-menu li,
 .dropdown-divider + a,
 .dropdown-menu .nav-link {
-  color: var(--text-primary) !important;
+  color: #d0bfff !important;
   padding: 8px 12px !important;
   border-radius: 4px !important;
-  transition: all var(--transition-speed) ease !important;
+  transition: all 0.25s ease !important;
   font-size: 0.85em !important;
   display: block !important;
   text-decoration: none !important;
   border: 1px solid transparent !important;
   margin: 1px 0 !important;
-  background: var(--surface-02) !important;
+  background: #1a1621 !important;
   width: calc(100% - 2px) !important;
   max-width: none !important;
   white-space: nowrap !important;
@@ -214,9 +214,9 @@ li.dropdown .dropdown-menu a:hover,
 .dropdown-menu li:hover,
 .dropdown-divider + a:hover,
 .dropdown-menu .nav-link:hover {
-  background: var(--primary-accent) !important;
+  background: #775499 !important;
   color: #fff !important;
-  border-color: var(--cyber-cyan) !important;
+  border-color: #00cccc !important;
   transform: translateX(2px) !important;
 }
 
@@ -267,19 +267,11 @@ li.dropdown:hover .dropdown-menu,
 .dropdown-menu .icon,
 .dropdown-menu [class*="fa-"],
 .dropdown-menu [class*="icon-"] {
-  color: inherit !important;
+  color: #00cccc !important;
   margin-right: 8px !important;
   opacity: 0.9 !important;
   width: 14px !important;
   text-align: center !important;
-}
-
-.dropdown-menu a i,
-.dropdown-menu a .fa,
-.dropdown-menu a .icon,
-.dropdown-menu a [class*="fa-"],
-.dropdown-menu a [class*="icon-"] {
-  color: var(--cyber-cyan) !important;
 }
 
 .dropdown-menu a:hover i,
