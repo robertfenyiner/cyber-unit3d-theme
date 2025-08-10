@@ -38,9 +38,11 @@
   --content-padding: 20px;
   
   /* Component Specific Overrides for v9.1.5 */
-  --cyber-glow-intensity: 0.8;
+  --cyber-glow-intensity: 1.2;
   --cyber-border-radius: 8px;
   --cyber-transition-speed: 0.3s;
+  --cyber-glow-spread: 8px;
+  --cyber-intense-glow: 16px;
 }
 
 /* ===============================================================
@@ -54,16 +56,23 @@
   font-size: 14px !important;
   color: #fff !important;
   background: linear-gradient(145deg, #534b57, #3c343f) !important;
-  border: 2px solid var(--primary-accent) !important;
+  border: 3px solid var(--primary-accent) !important;
   border-radius: var(--cyber-border-radius) !important;
-  box-shadow: 0 0 8px rgba(119,84,153, var(--cyber-glow-intensity)) !important;
+  box-shadow: 
+    0 0 var(--cyber-glow-spread) rgba(119,84,153, var(--cyber-glow-intensity)),
+    0 0 var(--cyber-intense-glow) rgba(0, 255, 255, 0.4),
+    inset 0 0 var(--cyber-glow-spread) rgba(255, 0, 255, 0.1) !important;
   outline: none !important;
   transition: all var(--cyber-transition-speed) ease !important;
 }
 
 .quick-search__input:focus {
-  box-shadow: 0 0 12px var(--cyber-cyan) !important;
+  box-shadow: 
+    0 0 var(--cyber-intense-glow) var(--cyber-cyan),
+    0 0 24px rgba(0, 255, 255, 0.6),
+    inset 0 0 var(--cyber-glow-spread) rgba(255, 0, 255, 0.2) !important;
   border-color: var(--cyber-cyan) !important;
+  background: linear-gradient(145deg, #5a4f6a, #453a4f) !important;
 }
 
 .quick-search__input::placeholder {
@@ -118,20 +127,30 @@ body {
 ================================================================= */
 .top-nav {
   background: linear-gradient(145deg, #2d2733 0%, #1f1721 100%) !important;
-  border-bottom: 2px solid var(--primary-accent) !important;
+  border-bottom: 3px solid var(--primary-accent) !important;
   backdrop-filter: blur(10px) !important;
+  box-shadow: 
+    0 4px var(--cyber-glow-spread) rgba(0, 0, 0, 0.3),
+    0 0 var(--cyber-intense-glow) rgba(119, 84, 153, 0.4) !important;
 }
 
 .top-nav:hover {
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  box-shadow: 
+    0 4px var(--cyber-glow-spread) rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(119, 84, 153, 0.6),
+    0 0 32px rgba(0, 255, 255, 0.3) !important;
 }
 
 /* Updated dropdown styling for v9.1.5 */
 .top-nav__dropdown > ul {
   background: var(--surface-02) !important;
-  border: 2px solid var(--primary-accent) !important;
+  border: 3px solid var(--primary-accent) !important;
   border-radius: var(--cyber-border-radius) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 var(--cyber-intense-glow) rgba(119, 84, 153, 0.5),
+    0 0 24px rgba(0, 255, 255, 0.2) !important;
 }
 
 .top-nav__dropdown > ul > li > a:hover,
@@ -235,15 +254,23 @@ body {
 ================================================================= */
 .panel {
   background: linear-gradient(145deg, var(--surface-02), #322435) !important;
-  border: 2px solid var(--primary-accent) !important;
+  border: 3px solid var(--primary-accent) !important;
   border-radius: var(--cyber-border-radius) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 var(--cyber-glow-spread) rgba(119, 84, 153, 0.4),
+    inset 0 0 1px rgba(255, 0, 255, 0.2) !important;
   transition: all var(--cyber-transition-speed) ease !important;
 }
 
 .panel:hover {
-  box-shadow: 0 0 12px var(--cyber-cyan) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 0 var(--cyber-intense-glow) var(--cyber-cyan),
+    0 0 24px rgba(0, 255, 255, 0.6),
+    0 0 32px rgba(255, 0, 255, 0.3),
+    inset 0 0 var(--cyber-glow-spread) rgba(255, 0, 255, 0.1) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+  border-color: var(--cyber-cyan) !important;
 }
 
 .panel__heading {
@@ -344,10 +371,13 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
 ================================================================= */
 .chatbox__chatroom {
   background: linear-gradient(145deg, var(--surface-01), var(--surface-02)) !important;
-  border: 2px solid var(--primary-accent) !important;
+  border: 3px solid var(--primary-accent) !important;
   border-radius: var(--cyber-border-radius) !important;
   padding: 12px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 var(--cyber-glow-spread) rgba(119, 84, 153, 0.5),
+    inset 0 0 1px rgba(0, 255, 255, 0.2) !important;
 }
 
 .chatbox-message__content {
@@ -382,16 +412,23 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
 ================================================================= */
 .torrent-card {
   background: linear-gradient(135deg, var(--surface-02) 0%, #322435 100%) !important;
-  border: 2px solid var(--primary-accent) !important;
+  border: 3px solid var(--primary-accent) !important;
   border-radius: var(--cyber-border-radius) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 var(--cyber-glow-spread) rgba(119, 84, 153, 0.4),
+    inset 0 0 1px rgba(255, 0, 255, 0.1) !important;
   transition: all var(--cyber-transition-speed) ease !important;
 }
 
 .torrent-card:hover {
   border-color: var(--cyber-cyan) !important;
-  box-shadow: 0 0 16px var(--cyber-cyan) !important;
-  transform: translateY(-4px) !important;
+  box-shadow: 
+    0 0 var(--cyber-intense-glow) var(--cyber-cyan),
+    0 0 24px rgba(0, 255, 255, 0.6),
+    0 0 32px rgba(255, 0, 255, 0.3),
+    inset 0 0 var(--cyber-glow-spread) rgba(0, 255, 255, 0.1) !important;
+  transform: translateY(-6px) scale(1.02) !important;
 }
 
 /* ===============================================================
@@ -550,3 +587,189 @@ img.chatbox-message__avatar:hover {
 }
 
 /*# sourceMappingURL=cyber-v9.1.5.css.map */
+
+/* ===============================================================
+   Additional Visual Enhancements for Maximum Impact
+================================================================= */
+
+/* Featured Torrents Section */
+.featured-torrents,
+.torrent-card,
+.card {
+  position: relative;
+}
+
+.featured-torrents::before,
+.torrent-card::before,
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--cyber-magenta), var(--cyber-cyan), var(--primary-accent), var(--cyber-magenta));
+  background-size: 400% 400%;
+  border-radius: var(--cyber-border-radius);
+  z-index: -1;
+  animation: borderGlow 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity var(--cyber-transition-speed) ease;
+}
+
+.featured-torrents:hover::before,
+.torrent-card:hover::before,
+.card:hover::before {
+  opacity: 0.6;
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced Chat Messages */
+.chatbox-message {
+  transition: all var(--cyber-transition-speed) ease !important;
+  border-left: 2px solid transparent !important;
+}
+
+.chatbox-message:hover {
+  border-left: 2px solid var(--cyber-cyan) !important;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.05), transparent) !important;
+  box-shadow: inset 4px 0 8px rgba(0, 255, 255, 0.1) !important;
+}
+
+/* Enhanced Buttons */
+.btn,
+.button,
+input[type="submit"],
+input[type="button"] {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  border: 2px solid var(--cyber-cyan) !important;
+  color: #fff !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.btn::before,
+.button::before,
+input[type="submit"]::before,
+input[type="button"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.btn:hover::before,
+.button:hover::before,
+input[type="submit"]:hover::before,
+input[type="button"]:hover::before {
+  left: 100%;
+}
+
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  box-shadow: 
+    0 0 var(--cyber-intense-glow) var(--cyber-cyan),
+    0 0 24px rgba(0, 255, 255, 0.6) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* Glowing Text Effects */
+.user-name,
+.username,
+.torrent-title,
+.title {
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.user-name:hover,
+.username:hover,
+.torrent-title:hover,
+.title:hover {
+  color: var(--cyber-cyan) !important;
+  text-shadow: 
+    0 0 4px var(--cyber-cyan),
+    0 0 8px rgba(0, 255, 255, 0.5) !important;
+}
+
+/* Enhanced Scrollbars */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-01) !important;
+  border-radius: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  border-radius: 6px !important;
+  border: 2px solid var(--surface-01) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(145deg, var(--cyber-cyan), var(--cyber-magenta)) !important;
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+}
+
+/* Enhanced Links */
+a {
+  color: var(--text-primary) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+a:hover {
+  color: var(--cyber-cyan) !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+  text-decoration: none !important;
+}
+
+/* Enhanced Badges and Tags */
+.badge,
+.tag,
+.label {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  border: 1px solid var(--cyber-cyan) !important;
+  color: #fff !important;
+  text-shadow: 0 0 2px var(--cyber-cyan) !important;
+  border-radius: 4px !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.badge:hover,
+.tag:hover,
+.label:hover {
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Pulsating Animation for Active Elements */
+@keyframes cyberpulse2 {
+  0%, 100% { 
+    box-shadow: 0 0 4px var(--primary-accent);
+  }
+  50% { 
+    box-shadow: 
+      0 0 8px var(--cyber-cyan),
+      0 0 16px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.active,
+.selected,
+.current {
+  animation: cyberpulse2 2s ease-in-out infinite !important;
+}
