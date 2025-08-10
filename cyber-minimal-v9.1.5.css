@@ -1,10 +1,11 @@
 /*==================================================================================*/
 /* Theme Name: Cyber-Unit3D v9.1.5 Minimal                                        */
 /* Description: A minimal, elegant cyberpunk theme for UNIT3D v9.1.5              */
-/* Version: 2.1.0 - Minimal Edition                                                */
+/* Version: 2.1.1 - Minimal Edition (Updated: 2025-08-10 16:45)                   */
 /* Author: RKeaves & Assistant                                                     */
 /* License: MIT https://opensource.org/licenses/MIT                                */
 /* Compatibility: UNIT3D v9.1.5+                                                  */
+/* FORCED UPDATE: Dropdown menus fixed with aggressive selectors                   */
 /*==================================================================================*/
 
 /* Note: Set your profile theme to "Dark Teal" for optimal results */
@@ -139,7 +140,95 @@
 }
 
 /* ===============================================================
-   Navigation Bar - Complete Fix
+   FORCED DROPDOWN MENU FIXES - Ultra Specific Selectors
+================================================================= */
+
+/* Force all dropdown menus to be properly sized */
+.dropdown-menu,
+.nav-dropdown,
+.submenu,
+ul.dropdown-menu,
+div.dropdown-menu,
+.navbar .dropdown-menu,
+.nav .dropdown-menu,
+.navbar-nav .dropdown-menu,
+li.dropdown .dropdown-menu,
+.dropdown-toggle + .dropdown-menu {
+  background: var(--surface-02) !important;
+  border: 1px solid var(--primary-accent) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 
+    var(--subtle-shadow),
+    0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  padding: 4px !important;
+  margin-top: 2px !important;
+  min-width: 140px !important;
+  max-width: 180px !important;
+  width: auto !important;
+  z-index: 9999 !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  display: none !important;
+  float: none !important;
+}
+
+/* Force dropdown items to be properly styled */
+.dropdown-item,
+.dropdown-menu a,
+.dropdown-menu li a,
+.nav-dropdown a,
+.submenu a,
+.dropdown-menu .dropdown-item,
+li.dropdown .dropdown-menu a,
+.navbar .dropdown-menu a {
+  color: var(--text-primary) !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  transition: all var(--transition-speed) ease !important;
+  font-size: 0.85em !important;
+  display: block !important;
+  text-decoration: none !important;
+  border: 1px solid transparent !important;
+  margin: 1px 0 !important;
+  background: transparent !important;
+  width: auto !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+}
+
+.dropdown-item:hover,
+.dropdown-menu a:hover,
+.dropdown-menu li a:hover,
+.nav-dropdown a:hover,
+.submenu a:hover,
+.dropdown-menu .dropdown-item:hover,
+li.dropdown .dropdown-menu a:hover,
+.navbar .dropdown-menu a:hover {
+  background: var(--primary-accent) !important;
+  color: #fff !important;
+  border-color: var(--cyber-cyan) !important;
+  transform: translateX(2px) !important;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu,
+.nav-item:hover .dropdown-menu,
+li.dropdown:hover .dropdown-menu,
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Reset any Bootstrap or framework interference */
+.dropdown-menu.show {
+  max-width: 180px !important;
+  width: auto !important;
+}
+
+/* ===============================================================
+   NAVIGATION ITEMS - Force Proper Sizing
 ================================================================= */
 .navbar,
 .nav,
