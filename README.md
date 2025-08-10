@@ -94,10 +94,47 @@ Modify these core variables to change the theme's color profile:
 ### 3. Component Positioning
 - `--quick-search-input-offset`: Vertical adjustment for search bar
 
+---
+
+## Version Compatibility
+
+### v2.0.0 (Latest) - UNIT3D v9.1.5+ Compatible
+**Updated versions for UNIT3D v9.1.5:**
+- `cyber-v9.1.5.css` - Main cyberpunk theme (Purple/Cyan)
+- `cyber-lime-v9.1.5.css` - Lime green matrix theme
+
+**New features in v2.0.0:**
+- ✅ Updated for UNIT3D v9.1.5 CSS structure
+- ✅ Enhanced ratio bar styling with responsive design
+- ✅ Improved mobile navigation support
+- ✅ Better quick search integration
+- ✅ Enhanced icon bar with hover effects
+- ✅ Accessibility improvements (reduced motion, high contrast)
+- ✅ Modern CSS variables and custom properties
+- ✅ Optimized animations and transitions
+
+### v1.0.1 (Legacy) - UNIT3D v9.0.4
+- `cyber.css` - Original cyberpunk theme
+- `cyber-lime.css` - Original lime green theme
+
+## Installation
+
+### For UNIT3D v9.1.5+
+1. **Navigate to**: User Icon → **My Settings** → External CSS Stylesheet
+2. **Paste Theme URL**: 
+   - Main theme: `https://your-domain.com/cyber-v9.1.5.css`
+   - Lime theme: `https://your-domain.com/cyber-lime-v9.1.5.css`
+3. **Set Base Theme**: Use **"Dark Teal"** for purple theme or **"Dark Green"** for lime theme
+4. **Save & Refresh**
+
+### For UNIT3D v9.0.4 (Legacy)
+Use the original `cyber.css` or `cyber-lime.css` files.
+
 **Report issues here**:  
 [https://github.com/RKeaves/cyber-unit3d-theme/issues](https://github.com/RKeaves/cyber-unit3d-theme/issues)
 
 ---
 
 ## Notes
-- Tested on UNIT3D v9.0.4 
+- v2.0.0: Tested and compatible with UNIT3D v9.1.5+
+- v1.0.1: Tested on UNIT3D v9.0.4 

@@ -1,0 +1,552 @@
+ /*==================================================================================!/*
+ !/* Theme Name: Cyber-Unit3D v9.1.5 Compatible                                     !/*
+ !/* Theme URL: https://rkeaves.github.io/css-theme/cyber-v9.1.5.css                !/*
+ !/* Description: A sleek, cyberpunk-inspired CSS theme updated for UNIT3D v9.1.5   !/*
+ !/* Version: 2.0.0                                                                  !/*
+ !/* Author: RKeaves & Assistant                                                     !/*
+ !/* Author URL: https://github.com/rkeaves                                          !/*
+ !/* License: MIT https://opensource.org/licenses/MIT                                !/*
+ !/* Compatibility: UNIT3D v9.1.5+                                                  !/*
+ !/* Contributions & Feedback;                                                       !/*
+ !/* Feel free to suggest improvements, submit commits, or report issues on GitHub:  !/*
+ !/* https://github.com/RKeaves/cyber-unit3d-theme/                                  !/*
+ !/*==================================================================================/*
+
+/* ================================================================================== */
+/* -> Note: For optimal appearance, please change your profile theme to "Dark Teal"   */
+/* -> This version is specifically updated for UNIT3D v9.1.5 compatibility           */   
+/* ================================================================================== */
+
+/* ===============================================================
+   Global Design Variables (Updated for v9.1.5)
+================================================================= */
+:root {
+  /* Core Color Scheme */
+  --primary-accent: #775499;     
+  --secondary-accent: #6c5186;
+  --cyber-magenta: #ff00ff;
+  --cyber-cyan: #00ffff;
+  --cyber-lime: #39ff14;
+  --dark-base: #0c090f;
+  --surface-01: #110d15;
+  --surface-02: #1f1721;
+  --text-primary: #d0bfff;
+  --text-secondary: #a68ebd;
+
+  /* Layout Settings */
+  --content-max-width: 1200px;      
+  --content-padding: 20px;
+  
+  /* Component Specific Overrides for v9.1.5 */
+  --cyber-glow-intensity: 0.8;
+  --cyber-border-radius: 8px;
+  --cyber-transition-speed: 0.3s;
+}
+
+/* ===============================================================
+   Enhanced Quick Search (Updated Class Names)
+================================================================= */
+.quick-search__input {
+  width: 100% !important;
+  height: 32px !important;
+  line-height: 32px !important; 
+  padding: 6px 15px !important;    
+  font-size: 14px !important;
+  color: #fff !important;
+  background: linear-gradient(145deg, #534b57, #3c343f) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  box-shadow: 0 0 8px rgba(119,84,153, var(--cyber-glow-intensity)) !important;
+  outline: none !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.quick-search__input:focus {
+  box-shadow: 0 0 12px var(--cyber-cyan) !important;
+  border-color: var(--cyber-cyan) !important;
+}
+
+.quick-search__input::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.7 !important;
+}
+
+/* Quick search results styling */
+.quick-search__results {
+  background: var(--surface-02) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: 0 0 var(--cyber-border-radius) var(--cyber-border-radius) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.quick-search__result-link:hover {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  color: #fff !important;
+}
+
+/* ===============================================================
+   Global Transition & Reset (Enhanced)
+================================================================= */
+* {
+  transition: filter var(--cyber-transition-speed) ease, 
+              transform var(--cyber-transition-speed) ease,
+              box-shadow var(--cyber-transition-speed) ease,
+              border-color var(--cyber-transition-speed) ease;
+  box-sizing: border-box;
+}
+
+/* ===============================================================
+   Body & Main Content Container
+================================================================= */
+body {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: var(--text-primary);
+  background: var(--dark-base);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.content-container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+/* ===============================================================
+   Navigation & Header Components (Updated for v9.1.5)
+================================================================= */
+.top-nav {
+  background: linear-gradient(145deg, #2d2733 0%, #1f1721 100%) !important;
+  border-bottom: 2px solid var(--primary-accent) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.top-nav:hover {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+/* Updated dropdown styling for v9.1.5 */
+.top-nav__dropdown > ul {
+  background: var(--surface-02) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.top-nav__dropdown > ul > li > a:hover,
+.top-nav__dropdown > ul > li > form > button:hover {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  color: #fff !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+}
+
+/* ===============================================================
+   Enhanced Ratio Bar Styling (New in v9.1.5)
+================================================================= */
+.top-nav__ratio-bar {
+  background: linear-gradient(145deg, var(--surface-01), var(--surface-02)) !important;
+  border: 1px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  padding: 8px 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.top-nav__ratio-bar:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+}
+
+/* Responsive ratio bar for mobile */
+@media (max-width: 768px) {
+  .top-nav__ratio-bar.mobile {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+    gap: 8px !important;
+    font-size: 11px !important;
+    margin: 8px !important;
+  }
+}
+
+/* Ratio bar icons with cyber colors */
+.top-nav__stats-up i,
+.ratio-bar__uploaded i,
+.ratio-bar__seeding i {
+  color: var(--cyber-lime) !important;
+  text-shadow: 0 0 4px var(--cyber-lime) !important;
+}
+
+.top-nav__stats-down i,
+.ratio-bar__downloaded i,
+.ratio-bar__leeching i {
+  color: var(--cyber-magenta) !important;
+  text-shadow: 0 0 4px var(--cyber-magenta) !important;
+}
+
+.ratio-bar__points i,
+.ratio-bar__tokens i {
+  color: #ffc00a !important;
+  text-shadow: 0 0 4px #ffc00a !important;
+}
+
+.top-nav__stats-ratio i,
+.ratio-bar__ratio i,
+.ratio-bar__buffer i {
+  color: var(--cyber-cyan) !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+}
+
+/* ===============================================================
+   Enhanced Icon Bar (Updated Mobile Support)
+================================================================= */
+.top-nav__icon-bar {
+  background: linear-gradient(145deg, var(--surface-01), var(--surface-02)) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  padding: 4px 8px !important;
+}
+
+.top-nav__icon-bar .top-nav__dropdown > a {
+  border-radius: 50% !important;
+  padding: 8px !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.top-nav__icon-bar .top-nav__dropdown > a:hover {
+  background: var(--primary-accent) !important;
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Mobile icon bar enhancements */
+@media screen and (max-width: 767px) {
+  .top-nav__icon-bar.mobile {
+    justify-content: center !important;
+    background: var(--surface-02) !important;
+    border: 1px solid var(--primary-accent) !important;
+    border-radius: var(--cyber-border-radius) !important;
+    margin: 8px !important;
+    padding: 8px !important;
+  }
+}
+
+/* ===============================================================
+   Panel Components (Enhanced)
+================================================================= */
+.panel {
+  background: linear-gradient(145deg, var(--surface-02), #322435) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.panel:hover {
+  box-shadow: 0 0 12px var(--cyber-cyan) !important;
+  transform: translateY(-2px) !important;
+}
+
+.panel__heading {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  color: #fff !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+  border-radius: var(--cyber-border-radius) var(--cyber-border-radius) 0 0 !important;
+}
+
+.panel__body {
+  background: var(--surface-02) !important;
+  color: var(--text-primary) !important;
+  border-radius: 0 0 var(--cyber-border-radius) var(--cyber-border-radius) !important;
+}
+
+/* ===============================================================
+   Data Tables (Enhanced for v9.1.5)
+================================================================= */
+.data-table {
+  background: var(--surface-02) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  overflow: hidden !important;
+}
+
+.data-table th {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+  border-bottom: 2px solid var(--cyber-cyan) !important;
+}
+
+.data-table tr:hover {
+  background: linear-gradient(145deg, rgba(119,84,153,0.2), rgba(108,81,134,0.2)) !important;
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.1) !important;
+}
+
+.data-table td {
+  border-bottom: 1px solid rgba(119,84,153,0.3) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+/* ===============================================================
+   Form Controls (Enhanced)
+================================================================= */
+.form__button--filled {
+  background: linear-gradient(145deg, var(--primary-accent), var(--secondary-accent)) !important;
+  border: 2px solid var(--cyber-cyan) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.form__button--filled:hover {
+  background: linear-gradient(145deg, var(--cyber-cyan), var(--cyber-magenta)) !important;
+  box-shadow: 0 0 16px var(--cyber-cyan) !important;
+  transform: translateY(-2px) !important;
+}
+
+.form__text,
+.form__textarea {
+  background: linear-gradient(145deg, var(--surface-01), var(--surface-02)) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  color: var(--text-primary) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.form__text:focus,
+.form__textarea:focus {
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+  outline: none !important;
+}
+
+/* ===============================================================
+   Enhanced Typography
+================================================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  color: var(--text-primary) !important;
+  text-shadow: 0 0 4px rgba(119,84,153,0.5) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  text-shadow: 0 0 8px var(--cyber-cyan) !important;
+  color: #fff !important;
+}
+
+/* ===============================================================
+   Enhanced Chat Box (Updated for v9.1.5)
+================================================================= */
+.chatbox__chatroom {
+  background: linear-gradient(145deg, var(--surface-01), var(--surface-02)) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  padding: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.chatbox-message__content {
+  color: var(--text-primary) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.chatbox-message__content:hover {
+  color: #fff !important;
+  text-shadow: 0 0 4px var(--cyber-cyan) !important;
+}
+
+.chatbox-message__avatar {
+  border-radius: 50% !important;
+  border: 2px solid var(--primary-accent) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.chatbox-message__avatar:hover {
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 8px var(--cyber-cyan) !important;
+}
+
+.chatbox-message__time {
+  color: var(--text-secondary) !important;
+  font-size: 11px !important;
+  opacity: 0.7 !important;
+}
+
+/* ===============================================================
+   Torrent Cards (Enhanced)
+================================================================= */
+.torrent-card {
+  background: linear-gradient(135deg, var(--surface-02) 0%, #322435 100%) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+}
+
+.torrent-card:hover {
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 16px var(--cyber-cyan) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* ===============================================================
+   Alert Components (Enhanced)
+================================================================= */
+.alert {
+  background: linear-gradient(145deg, var(--surface-02), #322435) !important;
+  border: 2px solid var(--primary-accent) !important;
+  border-radius: var(--cyber-border-radius) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.alert--success {
+  border-color: var(--cyber-lime) !important;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.3) !important;
+}
+
+.alert--danger {
+  border-color: var(--cyber-magenta) !important;
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.3) !important;
+}
+
+.alert--info {
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* ===============================================================
+   Enhanced Animations
+================================================================= */
+@keyframes cyberpulse {
+  0% { 
+    opacity: 0.95; 
+    text-shadow: 0 0 4px var(--cyber-cyan);
+  }
+  50% { 
+    opacity: 1; 
+    text-shadow: 0 0 8px var(--cyber-cyan);
+  }
+  100% { 
+    opacity: 0.95; 
+    text-shadow: 0 0 4px var(--cyber-cyan);
+  }
+}
+
+@keyframes cyberglow {
+  0% { 
+    box-shadow: 0 0 4px var(--primary-accent);
+  }
+  50% { 
+    box-shadow: 0 0 12px var(--cyber-cyan);
+  }
+  100% { 
+    box-shadow: 0 0 4px var(--primary-accent);
+  }
+}
+
+.torrent-card__plot {
+  animation: cyberpulse 4s ease-in-out infinite;
+}
+
+/* ===============================================================
+   Avatar Enhancements (Updated)
+================================================================= */
+img.user-search__avatar,
+img.user-stat-card__avatar,
+img.chatbox-message__avatar {
+  border-radius: 50% !important;
+  border: 2px solid var(--primary-accent) !important;
+  transition: all var(--cyber-transition-speed) ease !important;
+  position: relative;
+}
+
+img.user-search__avatar:hover,
+img.user-stat-card__avatar:hover,
+img.chatbox-message__avatar:hover {
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 0 12px var(--cyber-cyan) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ===============================================================
+   Responsive Design Enhancements
+================================================================= */
+@media (max-width: 768px) {
+  :root {
+    --content-padding: 12px;
+    --cyber-border-radius: 6px;
+  }
+  
+  .panel, .torrent-card, .data-table {
+    margin: 8px 0 !important;
+  }
+  
+  .quick-search__input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --content-padding: 8px;
+  }
+  
+  .top-nav__ratio-bar {
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+  }
+}
+
+/* ===============================================================
+   Dark Mode Compatibility
+================================================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cyber-glow-intensity: 1.0;
+  }
+}
+
+/* ===============================================================
+   High Contrast Support
+================================================================= */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-accent: #9966cc;
+    --cyber-cyan: #00ffff;
+    --cyber-magenta: #ff00ff;
+  }
+  
+  .panel, .torrent-card, .data-table {
+    border-width: 3px !important;
+  }
+}
+
+/* ===============================================================
+   Reduced Motion Support
+================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===============================================================
+   Print Styles
+================================================================= */
+@media print {
+  .top-nav, .chatbox__chatroom, .panel:hover {
+    box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+/*# sourceMappingURL=cyber-v9.1.5.css.map */
