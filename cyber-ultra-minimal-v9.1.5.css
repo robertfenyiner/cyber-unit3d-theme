@@ -48,6 +48,26 @@
   background: var(--primary) !important;
   border-color: var(--accent) !important;
   color: #fff !important;
+  box-shadow: 
+    0 0 20px rgba(0, 204, 204, 0.6),
+    inset 0 0 15px rgba(0, 204, 204, 0.1) !important;
+  transform: scale(1.08) !important;
+  text-shadow: 0 0 15px var(--accent) !important;
+  animation: logoPulse 1.5s ease-in-out infinite !important;
+}
+
+/* Animación de pulso para el logo */
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(0, 204, 204, 0.4),
+      inset 0 0 10px rgba(0, 204, 204, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(0, 204, 204, 0.8),
+      inset 0 0 20px rgba(0, 204, 204, 0.2);
+  }
 }
 
 /* ===============================================================
@@ -64,12 +84,15 @@
 .nav-link,
 .navbar-nav .nav-link {
   color: var(--text) !important;
-  background: none !important;
+  background: var(--surface) !important;
   border: 1px solid var(--border) !important;
   border-radius: 4px !important;
   padding: 6px 12px !important;
   margin: 0 2px !important;
   font-size: 0.9em !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
 }
 
 .nav-link:hover,
@@ -77,13 +100,52 @@
   color: #fff !important;
   background: var(--primary) !important;
   border-color: var(--accent) !important;
-  box-shadow: 0 0 8px rgba(0, 204, 204, 0.3) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 204, 204, 0.6),
+    inset 0 0 20px rgba(0, 204, 204, 0.1) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  text-shadow: 0 0 10px var(--accent) !important;
+}
+
+/* Efecto shimmer en los menús */
+.nav-link::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(0, 204, 204, 0.4), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.nav-link:hover::before {
+  left: 100% !important;
 }
 
 .nav-link.active {
   background: var(--accent) !important;
   color: var(--background) !important;
   border-color: var(--accent) !important;
+  box-shadow: 
+    0 0 20px rgba(0, 204, 204, 0.7),
+    inset 0 0 15px rgba(0, 204, 204, 0.2) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
+  animation: activePulse 2s ease-in-out infinite !important;
+}
+
+/* Animación para elemento activo */
+@keyframes activePulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(0, 204, 204, 0.5),
+      inset 0 0 10px rgba(0, 204, 204, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(0, 204, 204, 0.9),
+      inset 0 0 20px rgba(0, 204, 204, 0.3);
+  }
 }
 
 /* ===============================================================
@@ -97,6 +159,12 @@
   margin-top: 2px !important;
   min-width: 140px !important;
   max-width: 180px !important;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 204, 204, 0.2) !important;
+  transform: translateY(-10px) scale(0.9) !important;
+  animation-duration: 0.4s !important;
+  animation-fill-mode: both !important;
 }
 
 .dropdown-item,
@@ -113,7 +181,12 @@
 .dropdown-menu a:hover {
   background: var(--primary) !important;
   color: #fff !important;
-  box-shadow: 0 0 6px rgba(0, 204, 204, 0.2) !important;
+  box-shadow: 
+    0 0 15px rgba(0, 204, 204, 0.5),
+    inset 0 0 10px rgba(0, 204, 204, 0.1) !important;
+  transform: translateX(5px) scale(1.02) !important;
+  text-shadow: 0 0 8px var(--accent) !important;
+  border-left: 3px solid var(--accent) !important;
 }
 
 .dropdown-menu {
@@ -125,6 +198,29 @@
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  animation-name: cyberDropdownAppear !important;
+}
+
+/* Animación creativa para dropdowns */
+@keyframes cyberDropdownAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8) rotateX(-15deg);
+    box-shadow: 0 0 0 rgba(0, 204, 204, 0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-5px) scale(1.05) rotateX(-5deg);
+    box-shadow: 0 0 25px rgba(0, 204, 204, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(0, 204, 204, 0.2);
+  }
 }
 
 /* ===============================================================
@@ -238,7 +334,7 @@ table td {
 }
 
 /* ===============================================================
-   Clean User Stats
+   Clean User Stats with Creative Effects
 ================================================================= */
 .stats-box,
 .user-stats,
@@ -250,6 +346,39 @@ table td {
   color: var(--text) !important;
   font-size: 0.8em !important;
   margin: 0 2px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.stats-box:hover,
+.user-stats:hover,
+.navbar-text:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px rgba(0, 204, 204, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Efecto de barrido en stats */
+.stats-box::before,
+.user-stats::before,
+.navbar-text::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(0, 204, 204, 0.2), transparent) !important;
+  transition: left 0.5s ease !important;
+}
+
+.stats-box:hover::before,
+.user-stats:hover::before,
+.navbar-text:hover::before {
+  left: 100% !important;
 }
 
 /* ===============================================================
@@ -383,9 +512,12 @@ select:focus {
 /* ===============================================================
    Ultra Minimal Overrides
 ================================================================= */
-/* Remove all animations and transitions */
-* {
+/* Remove all animations except creative menu effects */
+*:not(.nav-link):not(.dropdown-menu):not(.top-nav__site-logo):not(.navbar-brand):not(.nav-link.active) {
   animation: none !important;
+}
+
+*:not(.nav-link):not(.dropdown-menu):not(.dropdown-item):not(.btn):not(.form-control) {
   transition: none !important;
 }
 
@@ -394,15 +526,22 @@ select:focus {
 .btn,
 .dropdown-item,
 .form-control {
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: all 0.3s ease !important;
 }
 
 .dropdown-menu {
-  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Remove all box-shadows except essential ones */
-*:not(.dropdown-menu):not(.modal-content):not(.nav-link:hover):not(.dropdown-item:hover) {
+.top-nav__site-logo,
+.navbar-brand,
+.site-logo,
+.brand {
+  transition: all 0.3s ease !important;
+}
+
+/* Remove all box-shadows except creative menu effects */
+*:not(.dropdown-menu):not(.modal-content):not(.nav-link:hover):not(.dropdown-item:hover):not(.nav-link.active):not(.top-nav__site-logo:hover):not(.navbar-brand:hover) {
   box-shadow: none !important;
 }
 
@@ -414,8 +553,8 @@ select:focus {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Remove all transforms */
-* {
+/* Remove all transforms except creative menu effects */
+*:not(.nav-link:hover):not(.dropdown-item:hover):not(.dropdown-menu):not(.top-nav__site-logo:hover):not(.navbar-brand:hover):not(.stats-box:hover):not(.user-stats:hover):not(.navbar-text:hover) {
   transform: none !important;
 }
 
