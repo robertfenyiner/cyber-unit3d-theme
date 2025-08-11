@@ -1,0 +1,566 @@
+/*==================================================================================*/
+/* Theme Name: Cyber-Unit3D v9.1.5 Ultra Minimal                                  */
+/* Description: Ultra minimal cyberpunk theme for UNIT3D v9.1.5                   */
+/* Version: 1.0.0 - Ultra Minimal Edition                                          */
+/* Author: RKeaves & Assistant                                                     */
+/* License: MIT https://opensource.org/licenses/MIT                                */
+/* Compatibility: UNIT3D v9.1.5+                                                  */
+/*==================================================================================*/
+
+/* Note: Set your profile theme to "Dark Teal" for optimal results */
+
+/* ===============================================================
+   Ultra Minimal Design Variables
+================================================================= */
+:root {
+  /* Minimal Color Palette */
+  --primary: #775499;
+  --accent: #00cccc;
+  --background: #0c090f;
+  --surface: #1a1621;
+  --text: #d0bfff;
+  --text-dim: #a68ebd;
+  --border: rgba(119, 84, 153, 0.2);
+}
+
+/* ===============================================================
+   Clean Navigation
+================================================================= */
+.navbar,
+.nav,
+.navbar-nav {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 8px !important;
+}
+
+.nav-link,
+.navbar-nav .nav-link {
+  color: var(--text) !important;
+  background: none !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  margin: 0 2px !important;
+  font-size: 0.9em !important;
+}
+
+.nav-link:hover,
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+  background: var(--primary) !important;
+  border-color: var(--accent) !important;
+}
+
+.nav-link.active {
+  background: var(--accent) !important;
+  color: var(--background) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ===============================================================
+   Minimal Dropdowns
+================================================================= */
+.dropdown-menu {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  margin-top: 2px !important;
+  min-width: 140px !important;
+  max-width: 180px !important;
+}
+
+.dropdown-item,
+.dropdown-menu a {
+  color: var(--text) !important;
+  padding: 6px 10px !important;
+  border-radius: 2px !important;
+  font-size: 0.85em !important;
+  background: none !important;
+  border: none !important;
+}
+
+.dropdown-item:hover,
+.dropdown-menu a:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+/* ===============================================================
+   Clean Search Bar
+================================================================= */
+.quick-search__input {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  color: var(--text) !important;
+  font-size: 14px !important;
+}
+
+.quick-search__input:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+}
+
+.quick-search__input::placeholder {
+  color: var(--text-dim) !important;
+}
+
+/* ===============================================================
+   Minimal Cards and Panels
+================================================================= */
+.panel,
+.card,
+.torrent-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+}
+
+.panel-heading,
+.card-header {
+  background: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 12px 16px !important;
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+
+.panel-body,
+.card-body {
+  padding: 16px !important;
+  color: var(--text) !important;
+}
+
+/* ===============================================================
+   Clean Buttons
+================================================================= */
+.btn,
+button {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  color: var(--text) !important;
+  font-size: 0.9em !important;
+}
+
+.btn:hover,
+button:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+}
+
+.btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.btn-success {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--background) !important;
+}
+
+/* ===============================================================
+   Minimal Tables
+================================================================= */
+.table,
+table {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+}
+
+.table th,
+table th {
+  background: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  padding: 12px !important;
+  font-weight: 600 !important;
+}
+
+.table td,
+table td {
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  padding: 12px !important;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background: rgba(26, 22, 33, 0.3) !important;
+}
+
+/* ===============================================================
+   Clean User Stats
+================================================================= */
+.stats-box,
+.user-stats,
+.navbar-text {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  color: var(--text) !important;
+  font-size: 0.8em !important;
+  margin: 0 2px !important;
+}
+
+/* ===============================================================
+   Minimal Badges and Labels
+================================================================= */
+.badge,
+.label {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  padding: 2px 8px !important;
+  font-size: 0.75em !important;
+}
+
+.badge-notification,
+.notification-count {
+  background: var(--accent) !important;
+  color: var(--background) !important;
+  border-radius: 10px !important;
+  padding: 2px 6px !important;
+  font-size: 0.7em !important;
+}
+
+/* ===============================================================
+   Clean Progress Bars
+================================================================= */
+.progress {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  height: 8px !important;
+  overflow: hidden !important;
+}
+
+.progress-bar {
+  background: var(--primary) !important;
+  height: 100% !important;
+}
+
+/* ===============================================================
+   Minimal Forms
+================================================================= */
+.form-control,
+input,
+textarea,
+select {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  color: var(--text) !important;
+  padding: 8px 12px !important;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+}
+
+.form-group label {
+  color: var(--text) !important;
+  font-weight: 500 !important;
+  margin-bottom: 4px !important;
+}
+
+/* ===============================================================
+   Clean Modal/Dialog
+================================================================= */
+.modal-content,
+.dialog {
+  background: var(--background) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+}
+
+.modal-header {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 16px !important;
+  color: var(--text) !important;
+}
+
+.modal-body {
+  background: var(--background) !important;
+  color: var(--text) !important;
+  padding: 16px !important;
+}
+
+.modal-footer {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  padding: 12px 16px !important;
+}
+
+/* ===============================================================
+   Minimal Alert Messages
+================================================================= */
+.alert {
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 12px 16px !important;
+  margin: 8px 0 !important;
+}
+
+.alert-info {
+  background: rgba(0, 204, 204, 0.1) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.alert-success {
+  background: rgba(119, 84, 153, 0.1) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.alert-warning {
+  background: rgba(255, 193, 7, 0.1) !important;
+  border-color: #ffc107 !important;
+  color: #ffc107 !important;
+}
+
+.alert-danger {
+  background: rgba(220, 53, 69, 0.1) !important;
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+/* ===============================================================
+   Ultra Minimal Overrides
+================================================================= */
+/* Remove all animations and transitions */
+* {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Keep only essential transitions for usability */
+.nav-link,
+.btn,
+.dropdown-item,
+.form-control {
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Remove all box-shadows except essential ones */
+*:not(.dropdown-menu):not(.modal-content) {
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.modal-content {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Remove all transforms */
+* {
+  transform: none !important;
+}
+
+/* Simplify all gradients to solid colors */
+*[style*="gradient"],
+*[style*="linear-gradient"],
+*[style*="radial-gradient"] {
+  background: var(--surface) !important;
+}
+
+/* ===============================================================
+   Clean Torrent Cards
+================================================================= */
+.torrent-card,
+.torrent-row {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 12px !important;
+  margin: 4px 0 !important;
+}
+
+.torrent-card .title,
+.torrent-row .title {
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+
+.torrent-card .meta,
+.torrent-row .meta {
+  color: var(--text-dim) !important;
+  font-size: 0.85em !important;
+}
+
+/* ===============================================================
+   Clean Forum Elements
+================================================================= */
+.forum-topic,
+.forum-post {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+  margin: 8px 0 !important;
+}
+
+.forum-meta {
+  color: var(--text-dim) !important;
+  font-size: 0.8em !important;
+  border-top: 1px solid var(--border) !important;
+  padding-top: 8px !important;
+  margin-top: 12px !important;
+}
+
+/* ===============================================================
+   Clean Sidebar
+================================================================= */
+.sidebar,
+.sidebar-panel {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.sidebar h3,
+.sidebar-panel h3 {
+  color: var(--text) !important;
+  font-size: 1.1em !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* ===============================================================
+   Reset All Non-Essential Styling
+================================================================= */
+/* Remove cyberpunk glows and effects */
+.cyber-glow,
+.neon-glow,
+.pulse,
+.glitch {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Remove decorative elements */
+.decoration,
+.ornament,
+.accent-line {
+  display: none !important;
+}
+
+/* Simplify all interactive elements */
+a:hover,
+button:hover,
+.clickable:hover {
+  color: var(--accent) !important;
+}
+
+/* Clean typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  margin: 16px 0 8px 0 !important;
+}
+
+p, span, div {
+  color: var(--text) !important;
+  line-height: 1.5 !important;
+}
+
+/* ===============================================================
+   Mobile Responsive - Minimal
+================================================================= */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+  
+  .nav-link {
+    width: 100% !important;
+    text-align: left !important;
+  }
+  
+  .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* ===============================================================
+   Ultra Clean - Remove All Decorative CSS
+================================================================= */
+/* Remove all background images */
+*:not(.logo):not(.avatar) {
+  background-image: none !important;
+}
+
+/* Remove all text decorations except links */
+* {
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: underline !important;
+  color: var(--accent) !important;
+}
+
+/* Remove all borders except essential structural ones */
+*:not(.nav-link):not(.btn):not(.form-control):not(.panel):not(.card):not(.table):not(.dropdown-menu):not(th):not(td) {
+  border: none !important;
+}
+
+/* Remove all margins except essential spacing */
+.container,
+.content {
+  padding: 16px !important;
+  margin: 0 auto !important;
+}
+
+/* ===============================================================
+   Final Cleanup
+================================================================= */
+/* Ensure consistent spacing */
+.row {
+  margin: 0 !important;
+  padding: 8px 0 !important;
+}
+
+.col,
+[class*="col-"] {
+  padding: 0 8px !important;
+}
+
+/* Clean footer */
+.footer {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  padding: 16px !important;
+  color: var(--text-dim) !important;
+  text-align: center !important;
+}
