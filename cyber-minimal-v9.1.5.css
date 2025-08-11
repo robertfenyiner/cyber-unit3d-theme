@@ -30,6 +30,37 @@
 }
 
 /* ===============================================================
+   Logo & Branding - Site Identity
+================================================================= */
+.top-nav__site-logo,
+.navbar-brand,
+.site-logo,
+.brand {
+  background: var(--surface) !important;
+  border: 1px solid var(--primary-accent) !important;
+  border-radius: var(--radius) !important;
+  padding: 6px 12px !important;
+  color: var(--text) !important;
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all var(--transition) ease !important;
+  text-shadow: 0 0 8px var(--accent) !important;
+  display: inline-block !important;
+}
+
+.top-nav__site-logo:hover,
+.navbar-brand:hover,
+.site-logo:hover,
+.brand:hover {
+  background: var(--primary-accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+  text-shadow: 0 0 12px var(--accent), 0 0 20px var(--accent) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ===============================================================
    User Menu & Top Bar - Elegant Boxes
 ================================================================= */
 /* User menu area (top right) */
@@ -206,10 +237,12 @@ li.dropdown .dropdown-menu a:hover,
 .dropdown-menu li:hover,
 .dropdown-divider + a:hover,
 .dropdown-menu .nav-link:hover {
-  background: #775499 !important;
+  background: var(--primary-accent) !important;
   color: #fff !important;
-  border-color: #00cccc !important;
-  /* transform removed for minimal design */
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 8px rgba(0, 204, 204, 0.3) !important;
+  transform: translateX(3px) !important;
+  text-shadow: 0 0 4px var(--accent) !important;
 }
 
 /* Force consistent styling for all dropdown elements */
@@ -237,7 +270,14 @@ li.dropdown .dropdown-menu a:hover,
   color: #fff !important;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown on hover with smooth animation */
+.dropdown-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-10px) !important;
+  transition: all 0.3s ease !important;
+}
+
 .dropdown:hover .dropdown-menu,
 .nav-item:hover .dropdown-menu,
 li.dropdown:hover .dropdown-menu,
@@ -245,6 +285,7 @@ li.dropdown:hover .dropdown-menu,
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Reset any Bootstrap or framework interference */
@@ -386,10 +427,11 @@ li.dropdown:hover .dropdown-menu,
 .nav-pills .nav-link:hover,
 .nav-tabs .nav-link:hover {
   color: #fff !important;
-  background: var(--primary) !important;
+  background: var(--primary-accent) !important;
   border-color: var(--accent) !important;
-  /* shadow removed for minimal design */
-  /* transform removed for minimal design */
+  box-shadow: 0 0 12px rgba(0, 204, 204, 0.4) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  text-shadow: 0 0 6px var(--accent) !important;
 }
 
 /* Ensure dropdown doesn't inherit unwanted styles */
@@ -903,18 +945,18 @@ h1, h2, h3, h4, h5, h6 {
    Ultra Minimal Overrides - Remove All Excessive Effects
 ================================================================= */
 
-/* Remove all animations and complex transitions */
-* {
+/* Remove complex animations but keep essential ones */
+*:not(.dropdown-menu):not(.nav-link):not(.dropdown-item):not(.top-nav__site-logo):not(.navbar-brand) {
   animation: none !important;
 }
 
-/* Remove all box-shadows except essential dropdowns */
-*:not(.dropdown-menu):not(.modal-content) {
+/* Remove all box-shadows except essential elements */
+*:not(.dropdown-menu):not(.modal-content):not(.nav-link:hover):not(.dropdown-item:hover):not(.top-nav__site-logo:hover) {
   box-shadow: none !important;
 }
 
-/* Remove all transforms */
-* {
+/* Remove transforms except for interactive elements */
+*:not(.dropdown-menu):not(.nav-link:hover):not(.dropdown-item:hover):not(.top-nav__site-logo:hover) {
   transform: none !important;
 }
 
@@ -928,7 +970,49 @@ h1, h2, h3, h4, h5, h6 {
 .btn,
 .dropdown-item,
 .form-control {
-  transition: background-color var(--transition), border-color var(--transition) !important;
+  transition: all var(--transition) ease !important;
+}
+
+/* Enhanced menu effects */
+.nav-link {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.nav-link::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(0, 204, 204, 0.2), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.nav-link:hover::before {
+  left: 100% !important;
+}
+
+/* Dropdown menu entrance effect */
+.dropdown-menu {
+  animation-duration: 0.3s !important;
+  animation-fill-mode: both !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  animation-name: dropdownFadeIn !important;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Essential minimal shadows only */
